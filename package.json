@@ -1,0 +1,14 @@
+{
+  "name": "rmp2018",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Grzegorz Andrzejowski",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
