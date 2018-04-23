@@ -65,7 +65,7 @@ module.exports = env => {
                 exclude: /node_modules/
             }),
             new webpack.DefinePlugin({
-                'process.end.NODE_ENV': JSON.stringify('production')
+                'process.env.NODE_ENV': JSON.stringify('production')
             }),
             new MiniCssExtractPlugin({
                 filename: '[name].css',
