@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Greeting from "./components/Greeting/Greeting";
 
 class App extends React.Component {
 
     render() {
-        return <p className="message">Hello from React</p>
+        return <Greeting />
     }
 }
 

@@ -20,18 +20,27 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader"] })
-
+                loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: [{
+                    loader: "css-loader",
+                    options: {
+                        modules:true,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }}] }),
             },
             {
                 test: /\.s[a,c]ss$/,
-                loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: ["css-loader", "sass-loader"] })
+                loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: [{
+                    loader: "css-loader",
+                    options: {
+                        modules: true,
+                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                    }}, "sass-loader"] }),
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin({
-            filename: "style.css"
+            filename: "[name].css"
         })
     ],
     watch:false
