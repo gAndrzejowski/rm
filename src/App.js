@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 class App extends React.Component {
 
     render() {
-        return <p>Hello from React</p>
+        return <p className="message">Hello from React</p>
     }
 }
 
