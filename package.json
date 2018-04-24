@@ -8,7 +8,8 @@
     "testWatch": "jest --watchAll",
     "build": "webpack --env.NODE_ENV=local --mode=development",
     "buildProd": "webpack --env.NODE_ENV=production --env.production --mode=production",
-    "buildWatch": "webpack --env.NODE_ENV=local --mode=development --watch"
+    "buildWatch": "webpack --env.NODE_ENV=local --mode=development --watch",
+    "start": "node server.js"
   },
   "author": "Grzegorz Andrzejowski",
   "license": "ISC",
