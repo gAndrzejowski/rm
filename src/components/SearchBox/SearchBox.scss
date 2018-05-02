@@ -1,4 +1,5 @@
 @mixin button($bg) {
+  cursor: pointer;
   color:white;
   text-transform: uppercase;
   text-align: center;

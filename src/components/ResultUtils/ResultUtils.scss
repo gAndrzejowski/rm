@@ -12,6 +12,9 @@
   }
   .sort {
     width:20vw;
+    div:not(:first-child) {
+      cursor: pointer;
+    }
   }
 }
 .active {
