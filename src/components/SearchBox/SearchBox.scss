@@ -1,0 +1,12 @@
+@mixin button($bg) {
+  color:white;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: $bg;
+}
+.btnActive,.search {
+  @include button(peachpuff);
+}
+.btnInactive {
+  @include button(grey);
+}
