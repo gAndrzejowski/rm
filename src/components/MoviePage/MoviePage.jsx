@@ -9,13 +9,14 @@ export default function MoviePage(props) {
         poster_path,
         overview,
         runtime,
+        vote_average,
         genres
     } = props.movie;
     return (
     <div className={styles.moviePage}>
         <img className={styles.poster} src={poster_path} />
         <div className={styles.details}>
-            <h1>{title}</h1>
+            <h1>{title} <span className={styles.rating}>{vote_average}</span> </h1>
             <small>{genres.join(', ')}</small>
             <p>{`${release_date.substring(0,4)}    ${runtime} min`}</p>
             <p>{overview}</p>
