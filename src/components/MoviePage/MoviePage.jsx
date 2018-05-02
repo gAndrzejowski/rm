@@ -16,8 +16,8 @@ export default function MoviePage(props) {
         <img className={styles.poster} src={poster_path} />
         <div className={styles.details}>
             <h1>{title}</h1>
-            <small>{genres}</small>
-            <p>{`${release_date} ${runtime}`}</p>
+            <small>{genres.join(', ')}</small>
+            <p>{`${release_date.substring(0,4)}    ${runtime} min`}</p>
             <p>{overview}</p>
         </div>
     </div>

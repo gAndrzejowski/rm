@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import Heading from './components/Heading/Heading';
 import Footing from './components/Footing/Footing';
 import Results from './components/Results/Results';
+import ResultUtils from './components/ResultUtils/ResultUtils';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import mockMovies from './mockMovies';
+import styles from './App.scss';
 
 class App extends React.Component {
 
@@ -12,7 +14,8 @@ class App extends React.Component {
         super(props);
         this.state = {
             results: mockMovies,
-            selectedMovie: null
+            selectedMovie: null,
+            currentSort: 'release_date'
         }
     }
 
@@ -25,9 +28,17 @@ class App extends React.Component {
     resetMovie = () => {
         this.setState({selectedMovie:null});
     };
+    changeSorting = (crit) => {
+        this.setState({currentSort: crit});
+    }
+    getSortingFunc = () => {
+        return (a,b)=>{
+            return a[this.state.currentSort]<b[this.state.currentSort] ? 1 : -1;
+        }
+    };
 
     render() {
-        const {selectedMovie, results} = this.state;
+        const {selectedMovie, results, currentSort} = this.state;
         return (
             <Fragment>
                 <ErrorBoundary>
@@ -38,7 +49,8 @@ class App extends React.Component {
                     />
                 </ErrorBoundary>
                 <ErrorBoundary>
-                    <Results results={results} chooseMovie={this.chooseMovie} />
+                    <ResultUtils numFound={results.length} changeSorting={this.changeSorting} currentSort={currentSort} />
+                    <Results results={results.sort(this.getSortingFunc())} chooseMovie={this.chooseMovie} />
                 </ErrorBoundary>
                 <ErrorBoundary>
                     <Footing />

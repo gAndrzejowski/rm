@@ -1,0 +1,19 @@
+.resultUtils {
+  background:wheat;
+  display:flex;
+  justify-content: space-between;
+  padding:0.5em 5vw;
+  p, div {
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    color:black;
+    font-weight: bold;
+  }
+  .sort {
+    width:20vw;
+  }
+}
+.active {
+  color:firebrick!important;
+}
