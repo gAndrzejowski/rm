@@ -8,4 +8,20 @@ header {
   flex-flow:row nowrap;
   justify-content: space-between;
   align-items: center;
+  button {
+    color:firebrick;
+    text-transform: uppercase;
+    text-align: center;
+    display:block;
+    background-color: white;
+    margin-left:10px;
+    border:none;
+    padding:.2em 1ch;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline:none;
+    font-weight: bold;
+  }
 }

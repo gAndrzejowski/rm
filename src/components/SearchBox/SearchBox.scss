@@ -5,9 +5,16 @@
   display:block;
   background-color: $bg;
   margin-left:10px;
+  border:none;
+  padding:.2em 1ch;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline:none;
 }
 .btnActive,.search {
-  @include button(peachpuff);
+  @include button(firebrick);
 }
 .btnInactive {
   @include button(grey);
