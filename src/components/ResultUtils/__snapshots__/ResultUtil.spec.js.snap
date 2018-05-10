@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultUtil components renders correctly 1`] = `
+<div
+  className="resultUtils"
+>
+  <p>
+    10 movies found
+  </p>
+  <div
+    className="sort"
+  >
+    <div>
+      Sort By
+    </div>
+    <div
+      className="active"
+      onClick={[Function]}
+    >
+      release date
+    </div>
+    <div
+      className=""
+      onClick={[Function]}
+    >
+      rating
+    </div>
+  </div>
+</div>
+`;

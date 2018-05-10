@@ -2,20 +2,20 @@
 
 exports[`MoviePage component renders correctly 1`] = `
 <div
-  className={undefined}
+  className="moviePage"
 >
   <img
-    className={undefined}
+    className="poster"
     src="https://image.tmdb.org/t/p/w500/xg7Dh7mjevDgznqw9JHYccNo9ZQ.jpg"
   />
   <div
-    className={undefined}
+    className="details"
   >
     <h1>
       Zulu
        
       <span
-        className={undefined}
+        className="rating"
       >
         6.7
       </span>

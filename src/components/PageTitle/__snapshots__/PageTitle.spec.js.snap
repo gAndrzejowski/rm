@@ -2,7 +2,7 @@
 
 exports[`PageTitle component renders correctly 1`] = `
 <p
-  className={undefined}
+  className="title"
 >
   netflixroulette
 </p>
