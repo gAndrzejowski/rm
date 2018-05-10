@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import styles from './SearchBox.scss';
 
 export default class SearchBox extends React.PureComponent {
-    constructor(props) {
-        super(props)
-        this.state = {
-            query:'',
-            searchBy:'title'
-        }
-    }
+    state = {
+        query:'',
+        searchBy:'title'
+    };
+
     static propTypes = {
         search:PropTypes.func.isRequired
     };

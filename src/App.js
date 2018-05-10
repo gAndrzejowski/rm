@@ -30,7 +30,7 @@ class App extends React.Component {
     };
     changeSorting = (crit) => {
         this.setState({currentSort: crit});
-    }
+    };
     getSortingFunc = () => {
         return (a,b)=>{
             return a[this.state.currentSort]<b[this.state.currentSort] ? 1 : -1;

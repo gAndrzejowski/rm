@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading component renders correctly when there is a movie chosen 1`] = `
+<header>
+  <div
+    className="top"
+  >
+    <p
+      className="title"
+    >
+      netflixroulette
+    </p>
+    <button
+      onClick={undefined}
+    >
+      Search
+    </button>
+  </div>
+  <div
+    className="moviePage"
+  >
+    <img
+      className="poster"
+      src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg"
+    />
+    <div
+      className="details"
+    >
+      <h1>
+        Zootopia
+         
+        <span
+          className="rating"
+        >
+          7.7
+        </span>
+         
+      </h1>
+      <small>
+        Animation, Adventure, Family, Comedy
+      </small>
+      <p>
+        2016    108 min
+      </p>
+      <p>
+        Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.
+      </p>
+    </div>
+  </div>
+</header>
+`;
+
+exports[`Heading component renders correctly when there is no movie chosen 1`] = `
+<header>
+  <div
+    className="top"
+  >
+    <p
+      className="title"
+    >
+      netflixroulette
+    </p>
+  </div>
+  <h2>
+    Find your movie
+  </h2>
+  <input
+    className="searchInput"
+    onChange={[Function]}
+    placeholder="Kill Bill"
+    type="text"
+    value=""
+  />
+  <div
+    className="controls"
+  >
+    <div
+      className="controls"
+    >
+      Search by
+      <button
+        className="btnActive"
+        onClick={[Function]}
+      >
+        title
+      </button>
+      <button
+        className="btnInactive"
+        onClick={[Function]}
+      >
+        genre
+      </button>
+    </div>
+    <button
+      className="search"
+      onClick={[Function]}
+    >
+      Search
+    </button>
+  </div>
+</header>
+`;
