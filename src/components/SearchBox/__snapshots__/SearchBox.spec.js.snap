@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBox component renders correctly 1`] = `
+Array [
+  <h2>
+    Find your movie
+  </h2>,
+  <input
+    className="searchInput"
+    onChange={[Function]}
+    placeholder="Kill Bill"
+    type="text"
+    value=""
+  />,
+  <div
+    className="controls"
+  >
+    <div
+      className="controls"
+    >
+      Search by
+      <button
+        className="btnActive"
+        onClick={[Function]}
+      >
+        title
+      </button>
+      <button
+        className="btnInactive"
+        onClick={[Function]}
+      >
+        genre
+      </button>
+    </div>
+    <button
+      className="search"
+      onClick={[Function]}
+    >
+      Search
+    </button>
+  </div>,
+]
+`;
