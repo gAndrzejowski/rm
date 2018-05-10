@@ -14,5 +14,6 @@ export default function Movie(props) {
 }
 
 Movie.propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
+    chooseMovie: PropTypes.func.isRequired
 };

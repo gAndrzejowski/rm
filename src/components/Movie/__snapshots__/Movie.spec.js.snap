@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results component renders correctly 1`] = `
+<div
+  className="panel"
+  onClick={[MockFunction]}
+>
+  <img
+    className="poster"
+    src="https://image.tmdb.org/t/p/w500/vUzzDpVrab1BOG3ogxhRGfLN94d.jpg"
+  />
+  <div>
+    <div
+      className="info"
+    >
+      <div
+        className="title"
+      >
+        Zombieland
+      </div>
+      <div
+        className="releaseDate"
+      >
+        2009
+      </div>
+    </div>
+    <p
+      className="genres"
+    >
+      Comedy, Horror
+    </p>
+  </div>
+</div>
+`;
