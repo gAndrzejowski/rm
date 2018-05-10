@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviePage component renders correctly 1`] = `
+<div
+  className={undefined}
+>
+  <img
+    className={undefined}
+    src="https://image.tmdb.org/t/p/w500/xg7Dh7mjevDgznqw9JHYccNo9ZQ.jpg"
+  />
+  <div
+    className={undefined}
+  >
+    <h1>
+      Zulu
+       
+      <span
+        className={undefined}
+      >
+        6.7
+      </span>
+       
+    </h1>
+    <small>
+      Crime, Drama, Thriller
+    </small>
+    <p>
+      2013    110 min
+    </p>
+    <p>
+      As a child, Ali Neuman narrowly escaped being murdered by Inkhata, a militant political party at war with Nelson Mandela's African National Congress. Only he and his mother survived the carnage of those years. But as with many survivors, the psychological scars remain.
+    </p>
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieInfo component renders correctly 1`] = `
+<div>
+  <div
+    className={undefined}
+  >
+    <div
+      className={undefined}
+    >
+      Zulu
+    </div>
+    <div
+      className={undefined}
+    />
+  </div>
+  <p
+    className={undefined}
+  >
+    Crime, Drama, Thriller
+  </p>
+</div>
+`;

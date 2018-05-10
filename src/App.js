@@ -5,7 +5,7 @@ import Footing from './components/Footing/Footing';
 import Results from './components/Results/Results';
 import ResultUtils from './components/ResultUtils/ResultUtils';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-import mockMovies from './mockMovies';
+import mockMovies from './__mocks__/mockMovies';
 import styles from './App.scss';
 
 class App extends React.Component {
