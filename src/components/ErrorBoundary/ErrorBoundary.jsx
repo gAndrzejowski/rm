@@ -13,10 +13,9 @@ class ErrorBoundary extends React.Component {
                 error,
                 info
             }});
-        console.log(error, info);
     }
     render() {
-        return this.state.error ? (<h1>Something went horribly wrong - more info in the console</h1>) : this.props.children;
+        return this.state.error ? (<h1>Something went horribly wrong!</h1>) : this.props.children;
     }
 }
 export default ErrorBoundary;
