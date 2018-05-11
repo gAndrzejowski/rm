@@ -8,19 +8,15 @@ import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import mockMovies from './__mocks__/mockMovies';
 import styles from './App.scss';
 
-class App extends React.Component {
+export default class App extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            results: mockMovies,
-            selectedMovie: null,
-            currentSort: 'release_date'
-        }
-    }
-
+    state = {
+        results: mockMovies,
+        selectedMovie: null,
+        currentSort: 'release_date'
+    };
     searchMovieDB = (query, by) => {
-        console.log(`searching by params - query: ${query}, criterion: ${by}`);
+        //TODO: SEARCHING
     };
     chooseMovie = (selectedMovie) => {
         this.setState({selectedMovie});
