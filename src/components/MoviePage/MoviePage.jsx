@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MoviePage.scss';
 
-export default function MoviePage(props) {
+const MoviePage = (props) => {
     const {
         title,
         release_date,
@@ -28,3 +28,4 @@ export default function MoviePage(props) {
 MoviePage.propTypes = {
    movie: PropTypes.object
 };
+export default MoviePage;

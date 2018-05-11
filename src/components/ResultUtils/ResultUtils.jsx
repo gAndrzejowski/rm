@@ -2,9 +2,7 @@ import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import styles from './ResultUtils.scss';
 
-export default function ResultUtils(props) {
-    const {numFound, currentSort, changeSorting} = props;
-    return (
+const ResultUtils = ({numFound, currentSort, changeSorting}) => (
         <div className={styles.resultUtils}>
             {numFound > 0 && (
                 <Fragment>
@@ -17,11 +15,11 @@ export default function ResultUtils(props) {
                 </Fragment>
             )}
         </div>
-    )
-}
+    );
 
 ResultUtils.propTypes = {
   numFound: PropTypes.number,
   currentSort: PropTypes.string,
   changeSorting: PropTypes.func.isRequired
 };
+export default ResultUtils;
