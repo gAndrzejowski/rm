@@ -4,9 +4,11 @@ import PageTitle from '../PageTitle/PageTitle';
 import SearchBox from '../SearchBox/SearchBox';
 import MoviePage from '../MoviePage/MoviePage';
 import styles from './Heading.scss';
+import {connect} from 'react-redux';
+import {set_current_movie} from "../../actions/creators";
 
 
-const Heading = ({selectedMovie, backToSearch, search}) =>
+export const Heading = ({selectedMovie, backToSearch}) =>
     <header>
         <div className={styles.top}>
             <PageTitle/>
@@ -15,14 +17,20 @@ const Heading = ({selectedMovie, backToSearch, search}) =>
         {selectedMovie ? (
             <MoviePage movie={selectedMovie}/>
         ) : (
-            <SearchBox search={search}/>
+            <SearchBox />
         )}
     </header>;
 
 Heading.propTypes = {
     selectedMovie: PropTypes.object,
-    search: PropTypes.func.isRequired,
-    backToSearch: PropTypes.func
+    backToSearch: PropTypes.func,
 };
 
-export default Heading;
+const mapStateToProps = (state) => ({
+    selectedMovie: state.heading.selected,
+});
+const mapDispatchToProps = dispatch => ({
+   backToSearch: () => dispatch(set_current_movie(null))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Heading);

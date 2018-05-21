@@ -1,59 +1,31 @@
 import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
+import {createStore } from 'redux';
+import {Provider} from 'react-redux';
 import Heading from './components/Heading/Heading';
 import Footing from './components/Footing/Footing';
 import Results from './components/Results/Results';
 import ResultUtils from './components/ResultUtils/ResultUtils';
 import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
-import mockMovies from './__mocks__/mockMovies';
+import rootReducer from './reducers/rootReducer';
 import styles from './App.scss';
 
-export default class App extends React.Component {
+const store = createStore(rootReducer);
 
-    state = {
-        results: mockMovies,
-        selectedMovie: null,
-        currentSort: 'release_date'
-    };
-    searchMovieDB = (query, by) => {
-        //TODO: SEARCHING
-    };
-    chooseMovie = (selectedMovie) => {
-        this.setState({selectedMovie});
-    };
-    resetMovie = () => {
-        this.setState({selectedMovie:null});
-    };
-    changeSorting = (crit) => {
-        this.setState({currentSort: crit});
-    };
-    getSortingFunc = () => {
-        return (a,b)=>{
-            return a[this.state.currentSort]<b[this.state.currentSort] ? 1 : -1;
-        }
-    };
-
-    render() {
-        const {selectedMovie, results, currentSort} = this.state;
-        return (
-            <Fragment>
+const App = () => (
+             <Fragment>
                 <ErrorBoundary>
-                    <Heading
-                        selectedMovie={results[selectedMovie] || null}
-                        search={this.searchMovieDB}
-                        backToSearch={this.resetMovie}
-                    />
+                    <Heading />
                 </ErrorBoundary>
                 <ErrorBoundary>
-                    <ResultUtils numFound={results.length} changeSorting={this.changeSorting} currentSort={currentSort} />
-                    <Results results={results.sort(this.getSortingFunc())} chooseMovie={this.chooseMovie} />
+                    <ResultUtils />
+                    <Results />
                 </ErrorBoundary>
                 <ErrorBoundary>
                     <Footing />
                 </ErrorBoundary>
             </Fragment>
-        )
-    }
-}
+)
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('main'));
 
-ReactDOM.render(<App />, document.getElementById('main'));
+export default App;
