@@ -14,7 +14,7 @@ export const Results = ({results, chooseMovie, getSameGenre, setTxt, setCrit}) =
                     key={e.id}
                     chooseMovie={() => {
                         chooseMovie(e);
-                        setTxt(e);
+                        setTxt(e.genres[0]);
                         setCrit();
                         getSameGenre(e.genres[0]);
                     }}
@@ -46,7 +46,7 @@ const mapDispatchToProps = (dispatch) => ({
         });
         return dispatch(get_movies(result.data));
     },
-    setTxt: movie => dispatch(set_search_txt(movie.genres[0])),
+    setTxt: genre => dispatch(set_search_txt(genre)),
     setCrit: () => dispatch(set_search_criterion('genres'))
 });
 

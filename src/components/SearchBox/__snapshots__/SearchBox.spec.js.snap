@@ -7,10 +7,10 @@ Array [
   </h2>,
   <input
     className="searchInput"
-    onChange={[Function]}
+    onChange={[MockFunction]}
     placeholder="Kill Bill"
     type="text"
-    value=""
+    value="test"
   />,
   <div
     className="controls"

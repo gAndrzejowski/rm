@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import ResultUtils from './ResultUtils';
+import { ResultUtils } from './ResultUtils';
 import styles from 'ResultUtils.scss';
 
 describe('ResultUtil components', () => {

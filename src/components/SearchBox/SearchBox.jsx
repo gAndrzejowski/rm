@@ -5,7 +5,7 @@ import swagger from '../../util/calls';
 import {get_movies, set_search_txt, set_search_criterion} from "../../actions/creators";
 import styles from './SearchBox.scss';
 
-const SearchBox = ({searchBy, query, search, onQueryChange, onCriterionChosen}) => (
+export const SearchBox = ({searchBy, query, search, onQueryChange, onCriterionChosen}) => (
             <Fragment>
                <h2>Find your movie</h2>
                <input className={styles.searchInput}

@@ -1,16 +1,19 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import { shallow } from 'enzyme';
 import mockMovies from '../../__mocks__/mockMovies';
-import Heading from "./Heading";
+import {Heading} from "./Heading";
 
 describe('Heading component', () => {
+    const renderer = new ShallowRenderer();
     it('renders correctly when there is no movie chosen', () => {
-        const tree = renderer.create(<Heading search={jest.fn()} />).toJSON();
+        renderer.render(<Heading search={jest.fn()} />);
+        const tree = renderer.getRenderOutput();
         expect(tree).toMatchSnapshot();
     })
     it('renders correctly when there is a movie chosen', () => {
-        const tree = renderer.create(<Heading search={jest.fn()} selectedMovie={mockMovies[1]} />).toJSON();
+        renderer.render(<Heading search={jest.fn()} selectedMovie={mockMovies[1]} />);
+        const tree = renderer.getRenderOutput();
         expect(tree).toMatchSnapshot();
     })
     it('calls backToSearch after a button is clicked', () => {
@@ -19,12 +22,5 @@ describe('Heading component', () => {
 
         heading.find('button').simulate('click');
         expect(wrapper.find('Heading').prop('backToSearch').mock.calls.length).toBe(1);
-    })
-    it('calls search if search called from SearchBox child', () => {
-        const wrapper = shallow(<div><Heading search={jest.fn()} selectedMovie={null} search={jest.fn()}/></div>);
-        const heading = wrapper.find('Heading').dive();
-
-        heading.find('SearchBox').prop('search')();
-        expect(wrapper.find('Heading').prop('search').mock.calls.length).toBe(1);
     })
 });
