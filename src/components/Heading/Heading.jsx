@@ -26,10 +26,10 @@ Heading.propTypes = {
     backToSearch: PropTypes.func,
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     selectedMovie: state.heading.selected,
 });
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
    backToSearch: () => dispatch(set_current_movie(null))
 });
 
