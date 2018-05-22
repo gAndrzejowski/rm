@@ -22,8 +22,7 @@ describe('ResultUtil components', () => {
         utils.find('div[onClick]').first().simulate('click');
         utils.find('div[onClick]').at(1).simulate('click');
         const sortMock = wrapper.find('ResultUtils').first().prop('changeSorting');
-        expect(sortMock.mock.calls[0].length).toBe(1);
-        expect(sortMock.mock.calls[1].length).toBe(1);
+         expect(sortMock.mock.calls.length).toBe(2);
         expect(sortMock.mock.calls[0][0]).toBe('release_date');
         expect(sortMock.mock.calls[1][0]).toBe('vote_average');
     });

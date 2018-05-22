@@ -25,7 +25,7 @@ const App = () => (
                     <Footing />
                 </ErrorBoundary>
             </Fragment>
-)
+);
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('main'));
 
 export default App;
