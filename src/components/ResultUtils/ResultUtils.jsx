@@ -27,13 +27,13 @@ ResultUtils.propTypes = {
     by: PropTypes.string,
     changeSorting: PropTypes.func.isRequired
 };
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     numFound: state.movies.results.length,
     currentSort: state.movies.sort,
     search: state.heading.search,
     by: state.heading.by
 });
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
     changeSorting: async (crit, search, by) => {
         const results = await swagger({
             searchBy: by,

@@ -38,12 +38,12 @@ SearchBox.propTypes = {
     search:PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     query: state.heading.search,
     searchBy: state.heading.by
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
     onQueryChange: event => dispatch(set_search_txt(event.target.value)),
     onCriterionChosen: crit => dispatch(set_search_criterion(crit)),
     search: async (query, searchBy) => {

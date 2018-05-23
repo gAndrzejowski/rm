@@ -1,6 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SearchBox component renders correctly 1`] = `
+exports[`SearchBox component renders correctly with search by genre selected 1`] = `
+Array [
+  <h2>
+    Find your movie
+  </h2>,
+  <input
+    className="searchInput"
+    onChange={[MockFunction]}
+    placeholder="Action"
+    type="text"
+    value="test2"
+  />,
+  <div
+    className="controls"
+  >
+    <div
+      className="controls"
+    >
+      Search by
+      <button
+        className="btnInactive"
+        onClick={[Function]}
+      >
+        title
+      </button>
+      <button
+        className="btnActive"
+        onClick={[Function]}
+      >
+        genre
+      </button>
+    </div>
+    <button
+      className="search"
+      onClick={[Function]}
+    >
+      Search
+    </button>
+  </div>,
+]
+`;
+
+exports[`SearchBox component renders correctly with search by title selected 1`] = `
 Array [
   <h2>
     Find your movie

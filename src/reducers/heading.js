@@ -1,13 +1,13 @@
 import actions from '../actions/names';
 
-const initialState = {
+export const initialState = {
     selected: null,
     search: '',
     by: 'title'
 };
 
-const headingReducer = (state = initialState, action) => {
-    const {SET_SEARCH_TXT: txt, SET_SEARCH_CRITERION: criterion, SET_CURRENT_MOVIE: movie } = actions;
+const headingReducer = (state = initialState, action = {}) => {
+    const {SET_SEARCH_TXT: txt, SET_SEARCH_CRITERION: criterion, SET_CURRENT_MOVIE: movie, HYDRATE_STORE: hydrate } = actions;
     switch(action.type) {
         case movie:
             return {
@@ -24,6 +24,8 @@ const headingReducer = (state = initialState, action) => {
                 ...state,
                 by: action.criterion
             };
+        case hydrate:
+            return action.retrievedStore.heading || state;
         default:
             return state
     }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResultUtil components renders correctly 1`] = `
+exports[`ResultUtil component renders correctly 1`] = `
 <div
   className="resultUtils"
 >

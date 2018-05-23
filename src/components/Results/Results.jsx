@@ -33,11 +33,11 @@ Results.propTypes = {
     setCrit: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     results: state.movies.results
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
     chooseMovie: movie => dispatch(set_current_movie(movie)),
     getSameGenre: async genre => {
         const result = await swagger({

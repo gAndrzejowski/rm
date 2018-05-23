@@ -1,12 +1,12 @@
 import actions from '../actions/names';
 
-const initialState = {
+export const initialState = {
   results: [],
   sort: ''
 };
 
-const moviesReducer = (state = initialState, action) => {
-  const {GET_MOVIES: get, SORT_MOVIES: sort} = actions;
+const moviesReducer = (state = initialState, action = {}) => {
+  const {GET_MOVIES: get, SORT_MOVIES: sort, HYDRATE_STORE: hydrate} = actions;
   switch(action.type) {
       case get:
           return {
@@ -18,6 +18,8 @@ const moviesReducer = (state = initialState, action) => {
               sort: action.by,
               results: action.results
           };
+      case hydrate:
+          return action.retrievedStore.movies || state
       default:
           return state;
   }

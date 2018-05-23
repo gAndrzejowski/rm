@@ -39,4 +39,28 @@ describe('action creator functions', () => {
             txt: 'what should I watch tonight?'
         });
     });
+    it('hydrate store if no localStorage is present', ()=>{
+        const action = creators.hydrate_store();
+        expect(action).toEqual({
+            type: actions.HYDRATE_STORE,
+            retrievedStore: {}
+        });
+    });
+    it('hydrate store with localStorage present', () => {
+        window.localStorage = {
+            getItem: ()=>JSON.stringify({some: 'value'})
+        };
+        const action = creators.hydrate_store();
+        expect(action).toEqual({
+            type: actions.HYDRATE_STORE,
+            retrievedStore: {some: 'value'}
+        });
+        window.localStorage.getItem = ()=>null;
+        const noDataAction = creators.hydrate_store();
+        expect(noDataAction).toEqual({
+            type: actions.HYDRATE_STORE,
+            retrievedStore: {}
+        });
+        delete window.localStorage
+    })
 });
