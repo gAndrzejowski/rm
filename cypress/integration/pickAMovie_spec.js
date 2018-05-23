@@ -47,4 +47,16 @@ describe('Movies app', () => {
            .click()
            .should('match', '[class^=ResultUtils__active]');
     });
+    it('finds a movie, makes it active and revisits current page to check if the store is persisted', () => {
+        cy.reload();
+        cy.get('header input')
+            .type('Kill Bill');
+        cy.get('[class^=SearchBox__search___').contains('Search')
+            .click();
+        cy.get('article').contains('Kill Bill')
+            .click();
+        cy.visit('/?tryagain=now');
+        cy.get('header h1')
+            .should('contain', 'Kill Bill');
+    })
 });
