@@ -22,18 +22,18 @@ describe('Movies app', () => {
        cy.get('header input')
           .should('have.attr', 'placeholder', 'Kill Bill');
        cy.get('header input')
-          .type('Some movie I\'d like to find')
-          .should('have.attr', 'value', 'Some movie I\'d like to find');
-       cy.get('header').contains('Search')
+          .type('Kill Bill')
+          .should('have.attr', 'value', 'Kill Bill');
+       cy.get('[class^=SearchBox__search___').contains('Search')
           .click();
    });
     it('clicks one of the movies, visits the movie info, and comes back to search page', () => {
-       cy.get('article').contains('Zambezia')
+       cy.get('article').contains('Kill Bill')
            .click();
        cy.get('header img[class*=MoviePage__poster]');
        cy.get('header div[class*=MoviePage__details]');
        cy.get('header h1')
-           .should('contain', 'Zambezia');
+           .should('contain', 'Kill Bill');
        cy.get('header').contains('Search')
            .click();
        cy.get('header [class^=SearchBox__');
