@@ -6,11 +6,15 @@ import styles from 'ResultUtils.scss';
 import fetchMock from '../../__mocks__/fetchMock';
 import { sort_movies } from "../../actions/creators";
 import { swaggerBase, swagger } from "../../util/calls";
-import actions from '../../actions/names';
+import mockMovies from '../../__mocks__/mockMovies';
 
 describe ('ResultUtil component', () => {
-    it('renders correctly', () => {
+    it('renders correctly with movie not selected', () => {
         const tree = renderer.create(<ResultUtils changeSorting={jest.fn()} currentSort="release_date" numFound={10} />);
+        expect(tree).toMatchSnapshot();
+    });
+    it('renders correctly with movie selected', () => {
+        const tree = renderer.create(<ResultUtils changeSorting={jest.fn()} selected={mockMovies[0]} currentSort="release_date" numFound={5} />)
         expect(tree).toMatchSnapshot();
     });
     it('assigns active class to proper option div based on currentSort prop', () => {
@@ -41,14 +45,16 @@ describe('mapStateToProps function for ResultUtils', () => {
             },
             heading: {
                 search: 'may of some year',
-                by: 'date'
+                by: 'date',
+                selected: mockMovies[0]
             }
         };
         expect(mapStateToProps(fakeState)).toEqual({
             numFound: 5,
             currentSort: 'xxxyyy',
             search: 'may of some year',
-            by: 'date'
+            by: 'date',
+            selected: mockMovies[0]
         });
     });
 });

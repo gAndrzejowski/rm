@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 import { swagger } from '../../util/calls';
 import styles from './ResultUtils.scss';
 
-export const ResultUtils = ({numFound, currentSort, changeSorting, search, by}) => (
+export const ResultUtils = ({numFound, currentSort, changeSorting, search, by, selected}) => (
         <div className={styles.resultUtils}>
             {numFound > 0 && (
                 <Fragment>
-                    <p>{`${numFound} movies found`}</p>
+                    <p>{selected ? `Films by ${selected.genres[0]} genre` : `${numFound} movies found`}</p>
                     <div className={styles.sort}>
                         <div>Sort By</div>
                         <div onClick={()=>changeSorting('release_date', search, by)} className={currentSort==='release_date' ? styles.active : ''}>release date</div>
@@ -25,13 +25,15 @@ ResultUtils.propTypes = {
     currentSort: PropTypes.string,
     search: PropTypes.string,
     by: PropTypes.string,
-    changeSorting: PropTypes.func.isRequired
+    changeSorting: PropTypes.func.isRequired,
+    selected: PropTypes.object,
 };
 export const mapStateToProps = (state) => ({
     numFound: state.movies.results.length,
     currentSort: state.movies.sort,
     search: state.heading.search,
-    by: state.heading.by
+    by: state.heading.by,
+    selected: state.heading.selected
 });
 export const mapDispatchToProps = (dispatch) => ({
     changeSorting: async (crit, search, by) => {

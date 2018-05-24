@@ -1,11 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResultUtil component renders correctly 1`] = `
+exports[`ResultUtil component renders correctly with movie not selected 1`] = `
 <div
   className="resultUtils"
 >
   <p>
     10 movies found
+  </p>
+  <div
+    className="sort"
+  >
+    <div>
+      Sort By
+    </div>
+    <div
+      className="active"
+      onClick={[Function]}
+    >
+      release date
+    </div>
+    <div
+      className=""
+      onClick={[Function]}
+    >
+      rating
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ResultUtil component renders correctly with movie selected 1`] = `
+<div
+  className="resultUtils"
+>
+  <p>
+    Films by Crime genre
   </p>
   <div
     className="sort"
