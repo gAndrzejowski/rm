@@ -11,7 +11,8 @@ const moviesReducer = (state = initialState, action = {}) => {
       case get:
           return {
               ...state,
-              results: action.payload
+              results: action.payload,
+              sort: ''
           };
       case sort:
           return {

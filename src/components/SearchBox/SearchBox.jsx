@@ -1,8 +1,9 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import swagger from '../../util/calls';
-import {get_movies, set_search_txt, set_search_criterion} from "../../actions/creators";
+import {Link} from 'react-router-dom';
+import {searchMovies} from '../../actions/async';
+import {set_search_txt, set_search_criterion} from "../../actions/creators";
 import styles from './SearchBox.scss';
 
 export const SearchBox = ({searchBy, query, search, onQueryChange, onCriterionChosen}) => (
@@ -25,7 +26,9 @@ export const SearchBox = ({searchBy, query, search, onQueryChange, onCriterionCh
                            className={searchBy === 'genres' ? styles.btnActive : styles.btnInactive}
                        >genre</button>
                    </div>
-                   <button className={styles.search} onClick={()=>search(query, searchBy)}>Search</button>
+                   <Link to={`/search/${searchBy}/${query}`}>
+                       <button className={styles.search} onClick={()=>search(query, searchBy)}>Search</button>
+                   </Link>
                </div>
            </Fragment>
         );
@@ -46,13 +49,7 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = (dispatch) => ({
     onQueryChange: event => dispatch(set_search_txt(event.target.value)),
     onCriterionChosen: crit => dispatch(set_search_criterion(crit)),
-    search: async (query, searchBy) => {
-        const results = await swagger({
-            search: query,
-            searchBy
-        });
-        return dispatch(get_movies(results.data));
-    }
+    search: async (query, searchBy) => dispatch(await searchMovies(query, searchBy))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);

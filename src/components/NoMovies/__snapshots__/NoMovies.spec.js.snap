@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NoMovies component renders correctly 1`] = `
-<h2
+<article
   className="noResults"
 >
-  No films found
-</h2>
+  <h2>
+    No films found
+  </h2>
+</article>
 `;

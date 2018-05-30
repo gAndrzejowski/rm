@@ -1,6 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
+import {MemoryRouter as Router} from 'react-router';
 import mockMovies from '../../__mocks__/mockMovies';
 import { Results, mapStateToProps, mapDispatchToProps } from "./Results";
 import fetchMock from '../../__mocks__/fetchMock';
@@ -9,33 +10,41 @@ import {swaggerBase} from "../../util/calls";
 
 describe('Results component', () => {
     it('renders correctly when there are movies to display', () => {
-        const tree = renderer.create(<Results
-            chooseMovie={jest.fn()}
-            results={mockMovies}
-            getSameGenre={jest.fn()}
-            setTxt={jest.fn()}
-            setCrit={jest.fn()}
-        />).toJSON();
+        const tree = renderer.create(
+            <Router>
+                <Results
+                    chooseMovie={jest.fn()}
+                    results={mockMovies}
+                    getSameGenre={jest.fn()}
+                    setTxt={jest.fn()}
+                    setCrit={jest.fn()}
+                />
+            </Router>
+        ).toJSON();
         expect(tree).toMatchSnapshot();
     });
     it('renders correctly when there are no movies to display', () => {
-        const tree = renderer.create(<Results
-            chooseMovie={jest.fn()}
-            results={[]}
-            getSameGenre={jest.fn()}
-            setTxt={jest.fn()}
-            setCrit={jest.fn()}
-        />).toJSON();
+        const tree = renderer.create(
+            <Router>
+                <Results
+                    chooseMovie={jest.fn()}
+                    results={[]}
+                    getSameGenre={jest.fn()}
+                    setTxt={jest.fn()}
+                    setCrit={jest.fn()}
+                />
+            </Router>
+        ).toJSON();
         expect(tree).toMatchSnapshot();
     });
     it('calls chooseMovie, getSameGenre, setTxt and setCrit props with the right data after calling one of the child components chooseMovie props', () => {
-        const wrapper = shallow(<div><Results
+        const wrapper = shallow(<Router><Results
             chooseMovie={jest.fn()}
             results={mockMovies}
             getSameGenre={jest.fn()}
             setTxt={jest.fn()}
             setCrit={jest.fn()}
-        /></div>);
+        /></Router>);
         const results = wrapper.find('Results').dive();
 
         results.find('Movie').at(3).prop('chooseMovie')();

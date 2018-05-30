@@ -4,8 +4,9 @@ exports[`Results component renders correctly when there are movies to display 1`
 <article
   className="list"
 >
-  <div
+  <a
     className="panel"
+    href="/film/185567"
     onClick={[Function]}
   >
     <img
@@ -33,9 +34,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Crime, Drama, Thriller
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/269149"
     onClick={[Function]}
   >
     <img
@@ -63,9 +65,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Animation, Adventure, Family, Comedy
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/19908"
     onClick={[Function]}
   >
     <img
@@ -93,9 +96,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Comedy, Horror
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/1949"
     onClick={[Function]}
   >
     <img
@@ -123,9 +127,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Crime, Drama, Mystery, Thriller
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/97630"
     onClick={[Function]}
   >
     <img
@@ -153,9 +158,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Thriller, Drama, History
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/6795"
     onClick={[Function]}
   >
     <img
@@ -183,9 +189,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Family, Fantasy, Science Fiction, Adventure
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/133931"
     onClick={[Function]}
   >
     <img
@@ -213,9 +220,10 @@ exports[`Results component renders correctly when there are movies to display 1`
         Comedy, Animation, Adventure, Family
       </p>
     </div>
-  </div>
-  <div
+  </a>
+  <a
     className="panel"
+    href="/film/10358"
     onClick={[Function]}
   >
     <img
@@ -243,7 +251,7 @@ exports[`Results component renders correctly when there are movies to display 1`
         Comedy
       </p>
     </div>
-  </div>
+  </a>
 </article>
 `;
 
@@ -251,10 +259,12 @@ exports[`Results component renders correctly when there are no movies to display
 <article
   className="list"
 >
-  <h2
+  <article
     className="noResults"
   >
-    No films found
-  </h2>
+    <h2>
+      No films found
+    </h2>
+  </article>
 </article>
 `;

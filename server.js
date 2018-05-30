@@ -5,6 +5,9 @@ root = './';
 app.get('*/dist/:fileName', (req, res) => {
   res.sendFile(`dist/${req.params.fileName}`, {root});
 });
+app.get('*/img/:fileName', (req,res) => {
+  res.sendFile(`static/img/${req.params.fileName}`, {root});
+});
 app.get('*', (req, res) => {
   res.sendFile('index.html', {root});
 });

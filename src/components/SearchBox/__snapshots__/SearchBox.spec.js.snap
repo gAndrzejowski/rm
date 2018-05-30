@@ -32,12 +32,17 @@ Array [
         genre
       </button>
     </div>
-    <button
-      className="search"
+    <a
+      href="/search/genres/test2"
       onClick={[Function]}
     >
-      Search
-    </button>
+      <button
+        className="search"
+        onClick={[Function]}
+      >
+        Search
+      </button>
+    </a>
   </div>,
 ]
 `;
@@ -74,12 +79,17 @@ Array [
         genre
       </button>
     </div>
-    <button
-      className="search"
+    <a
+      href="/search/title/test"
       onClick={[Function]}
     >
-      Search
-    </button>
+      <button
+        className="search"
+        onClick={[Function]}
+      >
+        Search
+      </button>
+    </a>
   </div>,
 ]
 `;

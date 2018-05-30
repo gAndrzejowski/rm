@@ -1,5 +1,9 @@
 import React from 'react';
 import styles from './NoMovies.scss';
 
-const NoMovies = () => <h2 className={styles.noResults}>No films found</h2>
+const NoMovies = () => (
+    <article className={styles.noResults}>
+        <h2>No films found</h2>
+    </article>
+);
 export default NoMovies;

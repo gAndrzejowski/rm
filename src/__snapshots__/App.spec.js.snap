@@ -7,8 +7,27 @@ exports[`App component renders correctly 1`] = `
       <Heading />
     </ErrorBoundary>
     <ErrorBoundary>
-      <Connect(ResultUtils) />
-      <Connect(Results) />
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/film/:id"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/search/:by/:query"
+        />
+        <Route
+          component={[Function]}
+          path="*"
+        />
+      </Switch>
     </ErrorBoundary>
     <ErrorBoundary>
       <Footing />

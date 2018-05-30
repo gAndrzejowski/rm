@@ -1,15 +1,14 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
-import {sort_movies} from "../../actions/creators";
 import PropTypes from 'prop-types';
-import { swagger } from '../../util/calls';
+import {searchAndSort} from "../../actions/async";
 import styles from './ResultUtils.scss';
 
 export const ResultUtils = ({numFound, currentSort, changeSorting, search, by, selected}) => (
         <div className={styles.resultUtils}>
             {numFound > 0 && (
                 <Fragment>
-                    <p>{selected ? `Films by ${selected.genres[0]} genre` : `${numFound} movies found`}</p>
+                    <p>{(selected && selected.genres) ? `Films by ${selected.genres[0]} genre` : `${numFound} movies found`}</p>
                     <div className={styles.sort}>
                         <div>Sort By</div>
                         <div onClick={()=>changeSorting('release_date', search, by)} className={currentSort==='release_date' ? styles.active : ''}>release date</div>
@@ -36,14 +35,7 @@ export const mapStateToProps = (state) => ({
     selected: state.heading.selected
 });
 export const mapDispatchToProps = (dispatch) => ({
-    changeSorting: async (crit, search, by) => {
-        const results = await swagger({
-            searchBy: by,
-            sortBy: crit,
-            search
-        });
-        return dispatch(sort_movies(crit, results.data));
-    }
+    changeSorting: async (crit, search, by) => dispatch(await searchAndSort(crit, search, by))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultUtils);

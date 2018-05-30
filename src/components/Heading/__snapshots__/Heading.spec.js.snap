@@ -2,14 +2,16 @@
 
 exports[`Heading component renders correctly when there is no movie chosen 1`] = `
 <header>
-  <Route
-    component={[Function]}
-    exact={true}
-    path="/film/:id"
-  />
-  <Route
-    component={[Function]}
-    path="*"
-  />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/film/:id"
+    />
+    <Route
+      component={[Function]}
+      path="*"
+    />
+  </Switch>
 </header>
 `;

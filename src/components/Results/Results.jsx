@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {swagger} from '../../util/calls';
-import {set_current_movie, get_movies, set_search_txt, set_search_criterion} from "../../actions/creators";
+import {getByGenre} from "../../actions/async";
+import {set_current_movie, set_search_txt, set_search_criterion} from "../../actions/creators";
 import NoMovies from '../NoMovies/NoMovies';
 import Movie from '../Movie/Movie'
 import styles from './Results.scss';
@@ -39,13 +39,7 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
     chooseMovie: movie => dispatch(set_current_movie(movie)),
-    getSameGenre: async genre => {
-        const result = await swagger({
-            search: genre,
-            searchBy: 'genres'
-        });
-        return dispatch(get_movies(result.data));
-    },
+    getSameGenre: async genre => dispatch(await getByGenre(genre)),
     setTxt: genre => dispatch(set_search_txt(genre)),
     setCrit: () => dispatch(set_search_criterion('genres'))
 });

@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Results component renders correctly 1`] = `
-<div
+<a
   className="panel"
-  onClick={[MockFunction]}
+  href="/film/19908"
+  onClick={[Function]}
 >
   <img
     className="poster"
@@ -30,5 +31,5 @@ exports[`Results component renders correctly 1`] = `
       Comedy, Horror
     </p>
   </div>
-</div>
+</a>
 `;

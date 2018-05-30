@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { SearchBox } from "./SearchBox";
+import {MemoryRouter as Router} from 'react-router';
 import styles from './SearchBox.scss';
 import {mapStateToProps, mapDispatchToProps} from "../SearchBox/SearchBox";
 import fetchMock from '../../__mocks__/fetchMock';
@@ -11,30 +12,7 @@ import { swaggerBase } from "../../util/calls";
 describe('SearchBox component', () => {
     it('renders correctly with search by title selected', () => {
         const tree = renderer.create(
-            <SearchBox 
-                query="test"
-                search={jest.fn()}
-                searchBy="title"
-                onQueryChange={jest.fn()}
-                onCriterionChosen={jest.fn()}
-                />).toJSON();
-        expect(tree).toMatchSnapshot()
-    });
-    it('renders correctly with search by genre selected', () => {
-        const tree = renderer.create(
-            <SearchBox
-                searchBy="genres"
-                onQueryChange={jest.fn()}
-                onCriterionChosen={jest.fn()}
-                search={jest.fn()}
-                query="test2"
-            />
-        ).toJSON()
-        expect(tree).toMatchSnapshot();
-    });
-    it('calls the appropriate props when the input field\'s value changes', () => {
-        const wrapper = shallow(
-            <div>
+            <Router>
                 <SearchBox
                     query="test"
                     search={jest.fn()}
@@ -42,7 +20,34 @@ describe('SearchBox component', () => {
                     onQueryChange={jest.fn()}
                     onCriterionChosen={jest.fn()}
                 />
-            </div>);
+            </Router>).toJSON();
+        expect(tree).toMatchSnapshot()
+    });
+    it('renders correctly with search by genre selected', () => {
+        const tree = renderer.create(
+            <Router>
+                <SearchBox
+                    searchBy="genres"
+                    onQueryChange={jest.fn()}
+                    onCriterionChosen={jest.fn()}
+                    search={jest.fn()}
+                    query="test2"
+                />
+            </Router>
+        ).toJSON()
+        expect(tree).toMatchSnapshot();
+    });
+    it('calls the appropriate props when the input field\'s value changes', () => {
+        const wrapper = shallow(
+            <Router>
+                <SearchBox
+                    query="test"
+                    search={jest.fn()}
+                    searchBy="title"
+                    onQueryChange={jest.fn()}
+                    onCriterionChosen={jest.fn()}
+                />
+            </Router>);
         const searchBox = wrapper.find('SearchBox').first().dive();
         searchBox.find(`.${styles.searchInput}`).simulate('change', {target:{value:'Machete'}});
         expect(wrapper.find('SearchBox').prop('onQueryChange').mock.calls.length).toBe(1);
@@ -58,7 +63,7 @@ describe('SearchBox component', () => {
     });
     it('calls the search prop after clicking the search button, and passes the state values', () => {
         const wrapper = shallow(
-            <div>
+            <Router>
                 <SearchBox
                     query="test"
                     search={jest.fn()}
@@ -66,7 +71,7 @@ describe('SearchBox component', () => {
                     onQueryChange={jest.fn()}
                     onCriterionChosen={jest.fn()}
                 />
-            </div>);
+            </Router>);
         const searchBox = wrapper.find('SearchBox').first().dive();
         const mock =wrapper.find('SearchBox').prop('search').mock;
 

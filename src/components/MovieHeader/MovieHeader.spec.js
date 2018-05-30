@@ -15,7 +15,7 @@ describe('store connection functions', () => {
    it('mapStateToProps gets selected movie data from state', () => {
        const fakeState = {
            heading: {
-               selectedMovie: 'a movie'
+               selected: 'a movie'
            }
        };
        expect(mapStateToProps(fakeState)).toEqual({
