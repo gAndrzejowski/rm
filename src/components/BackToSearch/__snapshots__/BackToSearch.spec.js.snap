@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`back to search component renders correctly 1`] = `
+<Link
+  replace={false}
+  to="/"
+>
+  <button>
+    Search
+  </button>
+</Link>
+`;

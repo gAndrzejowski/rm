@@ -1,9 +1,9 @@
-const GET_MOVIES = 'get movies',
-    SORT_MOVIES = 'sort movies',
-    SET_CURRENT_MOVIE = 'set current movie',
-    SET_SEARCH_CRITERION = 'set search criterion',
-    SET_SEARCH_TXT = 'set search txt',
-    HYDRATE_STORE = 'hydrate store';
+export const GET_MOVIES = 'get movies';
+export const SORT_MOVIES = 'sort movies';
+export const SET_CURRENT_MOVIE = 'set current movie';
+export const SET_SEARCH_CRITERION = 'set search criterion';
+export const SET_SEARCH_TXT = 'set search txt';
+export const HYDRATE_STORE = 'hydrate store';
 
 export default {
     GET_MOVIES,

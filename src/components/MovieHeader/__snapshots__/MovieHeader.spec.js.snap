@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieHeader component renders correctly 1`] = `
+<header>
+  <div
+    className="top"
+  >
+    <PageTitle />
+    <BackToSearch
+      onClick={[MockFunction]}
+    />
+  </div>
+  <MoviePage
+    movie={Object {}}
+  />
+</header>
+`;

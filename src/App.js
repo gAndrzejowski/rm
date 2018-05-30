@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import {createStore, applyMiddleware } from 'redux';
 import {Provider} from 'react-redux';
 import Heading from './components/Heading/Heading';
@@ -16,18 +17,20 @@ const store = (window && window.localStorage) ? createStore(rootReducer, applyMi
 store.dispatch(hydrate_store());
 
 const App = () => (
-             <Fragment>
-                <ErrorBoundary>
-                    <Heading />
-                </ErrorBoundary>
-                <ErrorBoundary>
-                    <ResultUtils />
-                    <Results />
-                </ErrorBoundary>
-                <ErrorBoundary>
-                    <Footing />
-                </ErrorBoundary>
-            </Fragment>
+    <Router>
+        <Fragment>
+            <ErrorBoundary>
+                <Heading />
+            </ErrorBoundary>
+            <ErrorBoundary>
+                <ResultUtils />
+                <Results />
+            </ErrorBoundary>
+            <ErrorBoundary>
+                <Footing />
+            </ErrorBoundary>
+        </Fragment>
+    </Router>
 );
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('main'));
 

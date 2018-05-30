@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Header renders correctly 1`] = `
+<header>
+  <div
+    className="top"
+  >
+    <PageTitle />
+  </div>
+  <Connect(SearchBox) />
+</header>
+`;

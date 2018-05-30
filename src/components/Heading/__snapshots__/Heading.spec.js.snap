@@ -1,50 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Heading component renders correctly when there is a movie chosen 1`] = `
-<header>
-  <div
-    className="top"
-  >
-    <PageTitle />
-    <button
-      onClick={undefined}
-    >
-      Search
-    </button>
-  </div>
-  <MoviePage
-    movie={
-      Object {
-        "budget": 150000000,
-        "genres": Array [
-          "Animation",
-          "Adventure",
-          "Family",
-          "Comedy",
-        ],
-        "id": 269149,
-        "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
-        "poster_path": "https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg",
-        "release_date": "2016-02-11",
-        "revenue": 1023784195,
-        "runtime": 108,
-        "tagline": "Welcome to the urban jungle.",
-        "title": "Zootopia",
-        "vote_average": 7.7,
-        "vote_count": 6795,
-      }
-    }
-  />
-</header>
-`;
-
 exports[`Heading component renders correctly when there is no movie chosen 1`] = `
 <header>
-  <div
-    className="top"
-  >
-    <PageTitle />
-  </div>
-  <Connect(SearchBox) />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/film/:id"
+  />
+  <Route
+    component={[Function]}
+    path="*"
+  />
 </header>
 `;
