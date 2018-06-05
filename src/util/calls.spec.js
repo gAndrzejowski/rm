@@ -1,5 +1,5 @@
 import fetchMock from '../__mocks__/fetchMock'
-import {swagger, swaggerBase} from './calls';
+import {swagger, swaggerBase, single} from './calls';
 
 describe('call creator for Swagger API', () => {
     beforeAll(() => {
@@ -28,5 +28,14 @@ describe('call creator for Swagger API', () => {
         expect(res.data).toMatch('searchBy=b');
         expect(res.data).toMatch('sortBy=c');
         expect(res.data).toMatch('sortOrder=d');
+    })
+});
+
+describe('call creator for single movie in swagger', () => {
+    it('creates a call with specified id', async () => {
+        global.fetch = jest.fn();
+        global.fetch.mockImplementation(fetchMock);
+        const res = await single(777);
+        expect(res.data).toEqual(`${swaggerBase}/movies/777`);
     })
 });

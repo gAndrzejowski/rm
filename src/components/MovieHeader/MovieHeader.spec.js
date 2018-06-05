@@ -6,7 +6,7 @@ import {SET_CURRENT_MOVIE} from '../../actions/names';
 describe('MovieHeader component', () => {
     it('renders correctly', () => {
         const renderer = new ShallowRenderer();
-        renderer.render(<MovieHeader match={{params:{id:3}}} selectedMovie={{}} backToSearch={jest.fn()} />);
+        renderer.render(<MovieHeader match={{params:{id:3}}} selectedMovie={{}} backToSearch={jest.fn()} getMovie={jest.fn()} />);
         expect(renderer.getRenderOutput()).toMatchSnapshot();
     })
 });

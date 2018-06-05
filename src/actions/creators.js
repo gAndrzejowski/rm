@@ -23,6 +23,7 @@ export const hydrate_store = () => {
         retrievedStore: retrieval || {}
     };
 };
+export const apply_preloaded = (store = {}) => ({ type: HYDRATE_STORE, retrievedStore: store });
 
 export default {
     get_movies,
@@ -30,5 +31,6 @@ export default {
     set_current_movie,
     set_search_criterion,
     set_search_txt,
-    hydrate_store
+    hydrate_store,
+    apply_preloaded
 };

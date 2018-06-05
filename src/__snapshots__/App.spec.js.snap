@@ -1,37 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders correctly 1`] = `
-<BrowserRouter>
-  <UNDEFINED>
-    <ErrorBoundary>
-      <Heading />
-    </ErrorBoundary>
-    <ErrorBoundary>
-      <Switch>
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/film/:id"
-        />
-        <Route
-          component={[Function]}
-          exact={true}
-          path="/search/:by/:query"
-        />
-        <Route
-          component={[Function]}
-          path="*"
-        />
-      </Switch>
-    </ErrorBoundary>
-    <ErrorBoundary>
-      <Footing />
-    </ErrorBoundary>
+<Provider
+  store={undefined}
+>
+  <UNDEFINED
+    context={undefined}
+    location={undefined}
+  >
+    <UNDEFINED>
+      <ErrorBoundary>
+        <Heading />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Switch>
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/film/:id"
+          />
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/search/:by/:query"
+          />
+          <Route
+            component={[Function]}
+            path="*"
+          />
+        </Switch>
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Footing />
+      </ErrorBoundary>
+    </UNDEFINED>
   </UNDEFINED>
-</BrowserRouter>
+</Provider>
 `;

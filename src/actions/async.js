@@ -15,7 +15,6 @@ export const searchAndSort = async (sortBy, search, searchBy) => {
         search,
         searchBy
     });
-    console.log(results.data.length);
     return sort_movies(sortBy, results.data);
 };
 
