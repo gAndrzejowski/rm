@@ -9,6 +9,7 @@ import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import NotFound404 from './components/NotFound404/Notfound404';
 import Related from './components/Related/Related';
 import SearchResults from './components/SearchResults/SearchResults';
+import styles from './App.scss';
 
 const App = ({Router, location, context, Store}) => (
     <Provider store={Store}>

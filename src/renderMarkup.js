@@ -11,7 +11,7 @@ const renderMarkup = (appString, state) => `
         </head>
         <body>
           <div id="main">${appString}</div>
-          <script>
+          <script id="__preloaded_state__">
             window.__PRELOADED_STATE__ = ${JSON.stringify(state).replace(/</g, '\\u003c')};
           </script>
           <script src="/dist/bundle.js"></script>
