@@ -13,7 +13,8 @@
     "start": "node server.js",
     "e2e": "cypress open",
     "lint": "eslint src/components src/reducers src/actions src/util src/**/*.jsx",
-    "lintFix": "eslint src/components src/reducers src/actions src/util src/**/*.jsx --fix"
+    "lintFix": "eslint src/components src/reducers src/actions src/util src/**/*.jsx --fix",
+    "flow": "flow"
   },
   "author": "Grzegorz Andrzejowski",
   "license": "ISC",
@@ -30,12 +31,14 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.3",
     "babel-jest": "^22.4.3",
     "babel-loader": "^7.1.4",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.11",
@@ -48,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.9.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "flow-bin": "^0.74.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
     "mini-css-extract-plugin": "^0.4.0",

@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules
+.*/dist
+.*/static
+.*/coverage
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
