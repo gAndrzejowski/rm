@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware } from 'redux';
-import { persistStore } from "./middleware";
+import persistStore from './middleware';
 import rootReducer from '../reducers/rootReducer';
-import { hydrate_store, apply_preloaded } from "../actions/creators";
+import { hydrateStore, applyPreloaded } from '../actions/creators';
 
-export default preloadedState => {
-    const store = createStore(rootReducer, applyMiddleware(persistStore));
+export default (preloadedState) => {
+  const store = createStore(rootReducer, applyMiddleware(persistStore));
 
-    store.dispatch(hydrate_store());
-    store.dispatch(apply_preloaded(preloadedState));
-    return store;
-}
+  store.dispatch(hydrateStore());
+  store.dispatch(applyPreloaded(preloadedState));
+  return store;
+};

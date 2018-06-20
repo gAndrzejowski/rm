@@ -6,10 +6,10 @@ export const SET_SEARCH_TXT = 'set search txt';
 export const HYDRATE_STORE = 'hydrate store';
 
 export default {
-    GET_MOVIES,
-    SORT_MOVIES,
-    SET_SEARCH_CRITERION,
-    SET_CURRENT_MOVIE,
-    SET_SEARCH_TXT,
-    HYDRATE_STORE
+  GET_MOVIES,
+  SORT_MOVIES,
+  SET_SEARCH_CRITERION,
+  SET_CURRENT_MOVIE,
+  SET_SEARCH_TXT,
+  HYDRATE_STORE,
 };

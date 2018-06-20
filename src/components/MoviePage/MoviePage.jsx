@@ -3,29 +3,29 @@ import PropTypes from 'prop-types';
 import styles from './MoviePage.scss';
 
 const MoviePage = (props) => {
-    const {
-        title,
-        release_date,
-        poster_path,
-        overview,
-        runtime,
-        vote_average,
-        genres
-    } = props.movie;
-    return (
+  const {
+    title,
+    release_date: releaseDate,
+    poster_path: posterPath,
+    overview,
+    runtime,
+    vote_average: voteAverage,
+    genres,
+  } = props.movie;
+  return (
     <div className={styles.moviePage}>
-        <img className={styles.poster} src={poster_path} />
-        <div className={styles.details}>
-            <h1>{title} <span className={styles.rating}>{vote_average}</span> </h1>
-            <small>{genres.join(', ')}</small>
-            <p>{`${release_date.substring(0,4)}    ${runtime} min`}</p>
-            <p>{overview}</p>
-        </div>
+      <img className={styles.poster} src={posterPath} alt="" />
+      <div className={styles.details}>
+        <h1>{title} <span className={styles.rating}>{voteAverage}</span> </h1>
+        <small>{genres.join(', ')}</small>
+        <p>{`${releaseDate.substring(0, 4)}    ${runtime} min`}</p>
+        <p>{overview}</p>
+      </div>
     </div>
-    );
-}
+  );
+};
 
 MoviePage.propTypes = {
-   movie: PropTypes.object
+  movie: PropTypes.object,
 };
 export default MoviePage;

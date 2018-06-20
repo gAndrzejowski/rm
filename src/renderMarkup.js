@@ -1,5 +1,5 @@
 import React from 'react';
-import {renderToString} from 'react-dom/server';
+import { renderToString } from 'react-dom/server';
 
 const renderMarkup = (appString, state) => `
     <!doctype html>

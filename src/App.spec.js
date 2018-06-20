@@ -5,10 +5,10 @@ import App from './App';
 jest.mock('react-dom');
 
 describe('App component', () => {
-    const renderer = new shallowRenderer();
-    it('renders correctly', () => {
-        renderer.render(<App />);
-        const tree = renderer.getRenderOutput();
-        expect(tree).toMatchSnapshot();
-    });
+  const renderer = new shallowRenderer();
+  it('renders correctly', () => {
+    renderer.render(<App />);
+    const tree = renderer.getRenderOutput();
+    expect(tree).toMatchSnapshot();
+  });
 });

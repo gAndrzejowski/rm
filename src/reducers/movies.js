@@ -1,28 +1,31 @@
-import actions from '../actions/names';
+import {
+  GET_MOVIES,
+  SORT_MOVIES,
+  HYDRATE_STORE,
+} from '../actions/names';
 
 export const initialState = {
   results: [],
-  sort: ''
+  sort: '',
 };
 
 const moviesReducer = (state = initialState, action = {}) => {
-  const {GET_MOVIES: get, SORT_MOVIES: sort, HYDRATE_STORE: hydrate} = actions;
-  switch(action.type) {
-      case get:
-          return {
-              ...state,
-              results: action.payload,
-              sort: ''
-          };
-      case sort:
-          return {
-              sort: action.by,
-              results: action.results
-          };
-      case hydrate:
-          return action.retrievedStore.movies || state
-      default:
-          return state;
+  switch (action.type) {
+    case GET_MOVIES:
+      return {
+        ...state,
+        results: action.payload,
+        sort: '',
+      };
+    case SORT_MOVIES:
+      return {
+        sort: action.by,
+        results: action.results,
+      };
+    case HYDRATE_STORE:
+      return action.retrievedStore.movies || state;
+    default:
+      return state;
   }
 };
 
