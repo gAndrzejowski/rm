@@ -14,7 +14,9 @@
     "e2e": "cypress open",
     "lint": "eslint src/components src/reducers src/actions src/util src/**/*.jsx",
     "lintFix": "eslint src/components src/reducers src/actions src/util src/**/*.jsx --fix",
-    "flow": "flow"
+    "flow": "flow",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Grzegorz Andrzejowski",
   "license": "ISC",
@@ -62,7 +64,12 @@
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15",
     "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-node-externals": "^1.7.2",
+    "@storybook/react": "^3.4.7",
+    "@storybook/addon-actions": "^3.4.7",
+    "@storybook/addon-links": "^3.4.7",
+    "@storybook/addons": "^3.4.7",
+    "babel-runtime": "^6.26.0"
   },
   "jest": {
     "moduleNameMapper": {
