@@ -1,7 +1,9 @@
 import { swagger, single } from '../util/calls';
 import { getMovies, setCurrentMovie, sortMovies } from './creators';
 
-export const searchMovies = async (query, searchBy) => {
+// @flow
+
+export const searchMovies = async (query :string, searchBy :string) => {
   const results = await swagger({
     search: query,
     searchBy,
@@ -9,7 +11,7 @@ export const searchMovies = async (query, searchBy) => {
   return getMovies(results.data);
 };
 
-export const searchAndSort = async (sortBy, search, searchBy) => {
+export const searchAndSort = async (sortBy :string, search :string, searchBy :string) => {
   const results = await swagger({
     sortBy,
     search,
@@ -18,7 +20,7 @@ export const searchAndSort = async (sortBy, search, searchBy) => {
   return sortMovies(sortBy, results.data);
 };
 
-export const getByGenre = async (genre) => {
+export const getByGenre = async (genre :string) => {
   const results = await swagger({
     search: genre,
     searchBy: 'genres',
@@ -26,7 +28,7 @@ export const getByGenre = async (genre) => {
   return getMovies(results.data);
 };
 
-export const getById = async (id) => {
+export const getById = async (id :number) => {
   const results = await single(id);
   return setCurrentMovie(results);
 };

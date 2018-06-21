@@ -5,7 +5,7 @@ export const swagger = async (settings :{
   sortOrder?: string,
   search?: string,
   searchBy?: string
-} = {}) => {
+} = {}) :Promise<any> => {
   const {
     sortBy,
     sortOrder,
@@ -15,7 +15,7 @@ export const swagger = async (settings :{
   const response = await fetch(`${swaggerBase}/movies?search=${search || ''}&searchBy=${searchBy || 'title'}&sortBy=${sortBy || 'title'}&sortOrder=${sortOrder || 'desc'}`);
   return response.json();
 };
-export const single = async (id: number) => {
+export const single = async (id: number) :Promise<any> => {
   const response = await fetch(`${swaggerBase}/movies/${id}`);
   return response.json();
 };

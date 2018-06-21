@@ -16,7 +16,8 @@
     "lintFix": "eslint src/components src/reducers src/actions src/util src/**/*.jsx --fix",
     "flow": "flow",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "checkall": "npm run flow && npm run lint && npm test"
   },
   "author": "Grzegorz Andrzejowski",
   "license": "ISC",

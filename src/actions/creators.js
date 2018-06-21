@@ -7,12 +7,35 @@ import {
   HYDRATE_STORE,
 } from './names';
 
-export const getMovies = payload => ({ type: GET_MOVIES, payload });
-export const sortMovies = (by, results) => ({ type: SORT_MOVIES, by, results });
-export const setSearchCriterion = criterion => ({ type: SET_SEARCH_CRITERION, criterion });
-export const setCurrentMovie = movie => ({ type: SET_CURRENT_MOVIE, movie });
-export const setSearchTxt = txt => ({ type: SET_SEARCH_TXT, txt });
-export const hydrateStore = () => {
+// @flow
+type Action = {
+  type: string,
+}
+type Movie = {
+  id: number,
+  title: string,
+  tagline: string,
+  vote_average: number,
+  vote_count?: number,
+  release_date: string,
+  poster_path: string,
+  overview: string,
+  genres: Array<string>,
+  budget?: number,
+  revenue?: number,
+  runtime?: number
+}
+
+export const getMovies = (payload :Array<Movie>) :Action => ({ type: GET_MOVIES, payload });
+export const sortMovies = (by: string, results: Array<Movie>) :Action => (
+  { type: SORT_MOVIES, by, results }
+);
+export const setSearchCriterion = (criterion :string) :Action => (
+  { type: SET_SEARCH_CRITERION, criterion }
+);
+export const setCurrentMovie = (movie :Movie) :Action => ({ type: SET_CURRENT_MOVIE, movie });
+export const setSearchTxt = (txt :string) :Action => ({ type: SET_SEARCH_TXT, txt });
+export const hydrateStore = () :Action => {
   const retrieval = (window && window.localStorage) ?
     JSON.parse(window.localStorage.getItem('netflixRouletteStore')) :
     null;
@@ -21,14 +44,6 @@ export const hydrateStore = () => {
     retrievedStore: retrieval || {},
   };
 };
-export const applyPreloaded = (store = {}) => ({ type: HYDRATE_STORE, retrievedStore: store });
-
-export default {
-  getMovies,
-  sortMovies,
-  setCurrentMovie,
-  setSearchCriterion,
-  setSearchTxt,
-  hydrateStore,
-  applyPreloaded,
-};
+export const applyPreloaded = (store :Object<any> = {}) :Action => (
+  { type: HYDRATE_STORE, retrievedStore: store }
+);

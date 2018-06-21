@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import Heading from './components/Heading/Heading';
 import Footing from './components/Footing/Footing';
@@ -11,9 +10,16 @@ import Related from './components/Related/Related';
 import SearchResults from './components/SearchResults/SearchResults';
 import styles from './App.scss';
 
+// @flow
+type Props = {
+  Router :(any) => any,
+  location?: string,
+  context?: Object<any>,
+  Store: Object<any>
+};
 const App = ({
   Router, location, context, Store,
-}) => (
+} :Props) => (
   <Provider store={Store}>
     <Router location={location} context={context}>
       <Fragment>
@@ -36,10 +42,4 @@ const App = ({
   </Provider>
 );
 
-App.propTypes = {
-  Router: PropTypes.func.isRequired,
-  location: PropTypes.string,
-  context: PropTypes.object,
-  Store: PropTypes.object.isRequired,
-};
 export default App;

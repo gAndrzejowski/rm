@@ -1,14 +1,22 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { searchMovies } from '../../actions/async';
 import { setSearchTxt, setSearchCriterion } from '../../actions/creators';
 import styles from './SearchBox.scss';
 
+// @flow
+type Props = {
+  searchBy: string,
+  query?: string,
+  onQueryChange: Object<any> => void,
+  onCriterionChosen: string => void,
+  search: string => void
+}
+
 export const SearchBox = ({
   searchBy, query, search, onQueryChange, onCriterionChosen,
-}) => (
+}: Props) => (
   <Fragment>
     <h2>Find your movie</h2>
     <input
@@ -39,18 +47,14 @@ export const SearchBox = ({
   </Fragment>
 );
 
-SearchBox.propTypes = {
-  searchBy: PropTypes.string.isRequired,
-  query: PropTypes.string,
-  onQueryChange: PropTypes.func.isRequired,
-  onCriterionChosen: PropTypes.func.isRequired,
-  search: PropTypes.func.isRequired,
-};
 SearchBox.defaultProps = {
   query: '',
 };
 
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state :Object<any>) :{
+  query: string,
+  searchBy: string
+} => ({
   query: state.heading.search,
   searchBy: state.heading.by,
 });
