@@ -13,6 +13,11 @@ module.exports = {
   module: {
     rules: [
       // add your custom rules.
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: 'babel-loader',
+      }
     ],
   },
 };
