@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styles from '../Heading/Heading.scss';
 import SearchBox from '../SearchBox/SearchBox';

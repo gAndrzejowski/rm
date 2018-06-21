@@ -1,8 +1,14 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './MovieInfo.scss';
 
-const MovieInfo = ({ title, year, genres }) => (
+type Props = {
+  title: string,
+  year: string,
+  genres: Array<string>,
+};
+
+const MovieInfo = ({ title, year, genres } :Props) => (
   <div>
     <div className={styles.info}>
       <div className={styles.title}>{title}</div>
@@ -14,9 +20,4 @@ const MovieInfo = ({ title, year, genres }) => (
   </div>
 );
 
-MovieInfo.propTypes = {
-  title: PropTypes.string,
-  year: PropTypes.string,
-  genres: PropTypes.arrayOf(PropTypes.string),
-};
 export default MovieInfo;

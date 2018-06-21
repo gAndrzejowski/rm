@@ -1,12 +1,22 @@
+// @flow
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { searchAndSort } from '../../actions/async';
 import styles from './ResultUtils.scss';
+import type { MovieData, Store } from '../../flowTypes';
+
+type Props = {
+  numFound: number,
+  currentSort: string,
+  search: string,
+  by: string,
+  changeSorting: (string, string, string) => Promise<any>,
+  selected: MovieData,
+}
 
 export const ResultUtils = ({
   numFound, currentSort, changeSorting, search, by, selected,
-}) => (
+} :Props) => (
   <div className={styles.resultUtils}>
     {numFound > 0 && (
     <Fragment>
@@ -21,24 +31,16 @@ export const ResultUtils = ({
   </div>
 );
 
-ResultUtils.propTypes = {
-  numFound: PropTypes.number,
-  currentSort: PropTypes.string,
-  search: PropTypes.string,
-  by: PropTypes.string,
-  changeSorting: PropTypes.func.isRequired,
-  selected: PropTypes.object,
-};
-
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state :Store) => ({
   numFound: state.movies.results.length,
   currentSort: state.movies.sort,
   search: state.heading.search,
   by: state.heading.by,
   selected: state.heading.selected,
 });
-export const mapDispatchToProps = dispatch => ({
-  changeSorting: async (crit, search, by) => dispatch(await searchAndSort(crit, search, by)),
+export const mapDispatchToProps = (dispatch :any) => ({
+  changeSorting: async (crit :string, search :string, by :string) =>
+    dispatch(await searchAndSort(crit, search, by)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultUtils);

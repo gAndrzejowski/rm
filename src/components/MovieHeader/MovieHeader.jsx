@@ -1,5 +1,5 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styles from '../Heading/Heading.scss';
 import PageTitle from '../PageTitle/PageTitle';
@@ -7,10 +7,17 @@ import BackToSearch from '../BackToSearch/BackToSearch';
 import MoviePage from '../MoviePage/MoviePage';
 import { setCurrentMovie } from '../../actions/creators';
 import { getById } from '../../actions/async';
+import type { MovieData, RouteMatch, Store } from '../../flowTypes';
 
+type Props = {
+  match: RouteMatch,
+  selectedMovie: MovieData,
+  backToSearch: () => void,
+  getMovie: number => void,
+}
 export const MovieHeader = ({
   match: { params: { id } }, selectedMovie, backToSearch, getMovie,
-}) => {
+}: Props) => {
   if (!selectedMovie || selectedMovie.id !== +id) {
     getMovie(id);
     return null;
@@ -26,20 +33,13 @@ export const MovieHeader = ({
   );
 };
 
-MovieHeader.propTypes = {
-  match: PropTypes.object,
-  selectedMovie: PropTypes.object,
-  backToSearch: PropTypes.func.isRequired,
-  getMovie: PropTypes.func.isRequired,
-};
-
-export const mapStateToProps = state => ({
+export const mapStateToProps = (state :Store) => ({
   selectedMovie: state.heading.selected,
 });
 
-export const mapDispatchToProps = dispatch => ({
-  backToSearch: () => dispatch(setCurrentMovie(null)),
-  getMovie: async id => dispatch(await getById(id)),
+export const mapDispatchToProps = (dispatch :any) => ({
+  backToSearch: () :void => dispatch(setCurrentMovie(null)),
+  getMovie: async (id :number) :Promise<any> => dispatch(await getById(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieHeader);

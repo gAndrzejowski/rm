@@ -1,8 +1,9 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './MoviePage.scss';
+import type { MovieData } from '../../flowTypes';
 
-const MoviePage = (props) => {
+const MoviePage = (props :{movie: MovieData}) => {
   const {
     title,
     release_date: releaseDate,
@@ -25,7 +26,4 @@ const MoviePage = (props) => {
   );
 };
 
-MoviePage.propTypes = {
-  movie: PropTypes.object,
-};
 export default MoviePage;

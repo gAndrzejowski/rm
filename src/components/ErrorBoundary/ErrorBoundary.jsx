@@ -1,19 +1,22 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 
-class ErrorBoundary extends React.Component {
-  static propTypes = {
-    children: PropTypes.any,
-  }
+type Props = {
+  children :any,
+};
+type State = {
+  error: null|{error: Object, info: string},
+};
 
-  constructor(props) {
+class ErrorBoundary extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       error: null,
     };
   }
 
-  componentDidCatch(error, info) {
+  componentDidCatch(error :Error, info: string) {
     this.setState({
       error: {
         error,

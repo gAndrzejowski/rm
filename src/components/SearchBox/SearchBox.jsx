@@ -1,17 +1,18 @@
+// @flow
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { searchMovies } from '../../actions/async';
 import { setSearchTxt, setSearchCriterion } from '../../actions/creators';
 import styles from './SearchBox.scss';
+import type { Store } from '../../flowTypes';
 
-// @flow
 type Props = {
   searchBy: string,
-  query?: string,
-  onQueryChange: Object<any> => void,
+  query: string,
+  onQueryChange: Event => void,
   onCriterionChosen: string => void,
-  search: string => void
+  search: (string, string) => void
 }
 
 export const SearchBox = ({
@@ -51,7 +52,7 @@ SearchBox.defaultProps = {
   query: '',
 };
 
-export const mapStateToProps = (state :Object<any>) :{
+export const mapStateToProps = (state :Store):{
   query: string,
   searchBy: string
 } => ({
@@ -59,10 +60,10 @@ export const mapStateToProps = (state :Object<any>) :{
   searchBy: state.heading.by,
 });
 
-export const mapDispatchToProps = dispatch => ({
-  onQueryChange: event => dispatch(setSearchTxt(event.target.value)),
-  onCriterionChosen: crit => dispatch(setSearchCriterion(crit)),
-  search: async (query, searchBy) => dispatch(await searchMovies(query, searchBy)),
+export const mapDispatchToProps = (dispatch :any) => ({
+  onQueryChange: (event: Object) => dispatch(setSearchTxt(event.target.value)),
+  onCriterionChosen: (crit :string) => dispatch(setSearchCriterion(crit)),
+  search: async (query :string, searchBy :string) => dispatch(await searchMovies(query, searchBy)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);

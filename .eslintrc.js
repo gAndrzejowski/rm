@@ -11,6 +11,7 @@ module.exports = {
     "import/no-named-as-default": 0,
     "react/forbid-prop-types": 0,
     "react/require-default-props": 0,
+    "react/default-props-match-prop-types": 0,
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/interactive-supports-focus": 0,

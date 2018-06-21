@@ -1,9 +1,11 @@
+// @flow
 import {
   SET_CURRENT_MOVIE,
   HYDRATE_STORE,
   SET_SEARCH_CRITERION,
   SET_SEARCH_TXT,
 } from '../actions/names';
+import type { Store, Action } from '../flowTypes';
 
 export const initialState = {
   selected: null,
@@ -11,7 +13,7 @@ export const initialState = {
   by: 'title',
 };
 
-const headingReducer = (state = initialState, action = {}) => {
+const headingReducer = (state :Store.heading = initialState, action :Action = {}) => {
   switch (action.type) {
     case SET_CURRENT_MOVIE:
       return {

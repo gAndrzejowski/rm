@@ -1,15 +1,17 @@
+// @flow
 import {
   GET_MOVIES,
   SORT_MOVIES,
   HYDRATE_STORE,
 } from '../actions/names';
+import type { Action, Store } from '../flowTypes';
 
 export const initialState = {
   results: [],
   sort: '',
 };
 
-const moviesReducer = (state = initialState, action = {}) => {
+const moviesReducer = (state :Store.movies = initialState, action :Action = {}) => {
   switch (action.type) {
     case GET_MOVIES:
       return {

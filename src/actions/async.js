@@ -1,7 +1,6 @@
+// @flow
 import { swagger, single } from '../util/calls';
 import { getMovies, setCurrentMovie, sortMovies } from './creators';
-
-// @flow
 
 export const searchMovies = async (query :string, searchBy :string) => {
   const results = await swagger({
