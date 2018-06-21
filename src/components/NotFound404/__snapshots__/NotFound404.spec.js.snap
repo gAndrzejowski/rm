@@ -5,7 +5,9 @@ exports[`404 page component renders correctly 1`] = `
   className="notfound"
 >
   <h2>
-    We couldn't find this page...
+    We couldn
+    '
+    t find this page...
   </h2>
   <img
     alt=""

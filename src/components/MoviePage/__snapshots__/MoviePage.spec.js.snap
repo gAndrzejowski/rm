@@ -5,6 +5,7 @@ exports[`MoviePage component renders correctly 1`] = `
   className="moviePage"
 >
   <img
+    alt=""
     className="poster"
     src="https://image.tmdb.org/t/p/w500/xg7Dh7mjevDgznqw9JHYccNo9ZQ.jpg"
   />

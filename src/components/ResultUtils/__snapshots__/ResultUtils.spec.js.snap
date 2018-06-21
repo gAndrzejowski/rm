@@ -16,12 +16,14 @@ exports[`ResultUtil component renders correctly with movie not selected 1`] = `
     <div
       className="active"
       onClick={[Function]}
+      role="button"
     >
       release date
     </div>
     <div
       className=""
       onClick={[Function]}
+      role="button"
     >
       rating
     </div>
@@ -45,12 +47,14 @@ exports[`ResultUtil component renders correctly with movie selected 1`] = `
     <div
       className="active"
       onClick={[Function]}
+      role="button"
     >
       release date
     </div>
     <div
       className=""
       onClick={[Function]}
+      role="button"
     >
       rating
     </div>

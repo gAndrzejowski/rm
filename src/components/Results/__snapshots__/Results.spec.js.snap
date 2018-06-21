@@ -10,6 +10,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zulu"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/xg7Dh7mjevDgznqw9JHYccNo9ZQ.jpg"
     />
@@ -41,6 +42,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zootopia"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg"
     />
@@ -72,6 +74,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zombieland"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/vUzzDpVrab1BOG3ogxhRGfLN94d.jpg"
     />
@@ -103,6 +106,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zodiac"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/bgLyOROfFQI3FqYL7jQbiaV8lkN.jpg"
     />
@@ -134,6 +138,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zero Dark Thirty"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/yg6IDNucLAEj7E5loTyTnUW2pgb.jpg"
     />
@@ -165,6 +170,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zathura: A Space Adventure"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/amqgIuISRBt8tsZM6cTT6gO9WLR.jpg"
     />
@@ -196,6 +202,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zambezia"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/dLZTSTe4czdJ3Fr6vwy8XwVzLF5.jpg"
     />
@@ -227,6 +234,7 @@ exports[`Results component renders correctly when there are movies to display 1`
     onClick={[Function]}
   >
     <img
+      alt="Zack and Miri Make a Porno"
       className="poster"
       src="https://image.tmdb.org/t/p/w500/zxwEJBhSSu5AuKTTd4ugWaCqmg.jpg"
     />
