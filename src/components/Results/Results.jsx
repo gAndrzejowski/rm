@@ -1,11 +1,12 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
+import injectStylesheet from 'react-jss';
 import { getByGenre } from '../../actions/async';
 import { setCurrentMovie, setSearchTxt, setSearchCriterion } from '../../actions/creators';
 import NoMovies from '../NoMovies/NoMovies';
 import Movie from '../Movie/Movie';
-import styles from './Results.scss';
+import styles from './Results.styles';
 import type { MovieData, Store } from '../../flowTypes';
 
 type Props = {
@@ -13,12 +14,13 @@ type Props = {
   chooseMovie: MovieData => void,
   getSameGenre: string => void,
   setTxt: string => void,
-  setCrit: () => void
+  setCrit: () => void,
+  classes: Object,
 }
 export const Results = ({
-  results, chooseMovie, getSameGenre, setTxt, setCrit,
+  results, chooseMovie, getSameGenre, setTxt, setCrit, classes,
 } :Props) => (
-  <article className={styles.list}>
+  <article className={classes.list}>
     {results.length === 0 ? <NoMovies /> : results.map((e :MovieData) => (
       <Movie
         key={e.id}
@@ -35,6 +37,9 @@ export const Results = ({
   </article>
 );
 
+Results.defaultProps = {
+  classes: {},
+};
 export const mapStateToProps = (state :Store) => ({
   results: state.movies.results,
 });
@@ -46,4 +51,4 @@ export const mapDispatchToProps = (dispatch :any) => ({
   setCrit: () => dispatch(setSearchCriterion('genres')),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Results);
+export default connect(mapStateToProps, mapDispatchToProps)(injectStylesheet(styles)(Results));

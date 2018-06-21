@@ -1,6 +1,10 @@
 // @flow
 import React from 'react';
-import styles from './PageTitle.scss';
+import injectStylesheet from 'react-jss';
+import styles from './PageTitle.styles';
 
-const PageTitle = () => <p className={styles.title}>netflixroulette</p>;
-export default PageTitle;
+const PageTitle = ({ classes } :Object) => <p className={classes.title}>netflixroulette</p>;
+PageTitle.defaultProps = {
+  classes: {},
+};
+export default injectStylesheet(styles)(PageTitle);

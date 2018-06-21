@@ -1,15 +1,16 @@
 // @flow
 import React from 'react';
-import styles from '../Heading/Heading.scss';
+import injectSheet from 'react-jss';
+import styles from '../Heading/Heading.styles';
 import SearchBox from '../SearchBox/SearchBox';
 import PageTitle from '../PageTitle/PageTitle';
 
-const SearchHeader = () => (
+const SearchHeader = ({ classes } :Object) => (
   <header>
-    <div className={styles.top}>
+    <div className={classes.top}>
       <PageTitle />
     </div>
     <SearchBox />
   </header>
 );
-export default SearchHeader;
+export default injectSheet(styles)(SearchHeader);

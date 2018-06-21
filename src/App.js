@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import injectSheet from 'react-jss';
 import Heading from './components/Heading/Heading';
 import Footing from './components/Footing/Footing';
 import NoMovies from './components/NoMovies/NoMovies';
@@ -9,7 +10,7 @@ import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import NotFound from './components/NotFound/NotFound';
 import Related from './components/Related/Related';
 import SearchResults from './components/SearchResults/SearchResults';
-import styles from './App.scss';
+import styles from './App.styles';
 
 type Props = {
   Router :(any) => any,
@@ -18,7 +19,7 @@ type Props = {
   Store: Object
 };
 
-const App = ({
+export const App = ({
   Router, location, context, Store,
 } :Props) => (
   <Provider store={Store}>
@@ -43,4 +44,4 @@ const App = ({
   </Provider>
 );
 
-export default App;
+export default injectSheet(styles)(App);

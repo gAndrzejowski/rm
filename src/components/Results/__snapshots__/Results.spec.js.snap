@@ -2,259 +2,259 @@
 
 exports[`Results component renders correctly when there are movies to display 1`] = `
 <article
-  className="list"
+  className={undefined}
 >
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/185567"
     onClick={[Function]}
   >
     <img
       alt="Zulu"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/xg7Dh7mjevDgznqw9JHYccNo9ZQ.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zulu
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2013
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Crime, Drama, Thriller
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/269149"
     onClick={[Function]}
   >
     <img
       alt="Zootopia"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zootopia
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2016
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Animation, Adventure, Family, Comedy
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/19908"
     onClick={[Function]}
   >
     <img
       alt="Zombieland"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/vUzzDpVrab1BOG3ogxhRGfLN94d.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zombieland
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2009
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Comedy, Horror
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/1949"
     onClick={[Function]}
   >
     <img
       alt="Zodiac"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/bgLyOROfFQI3FqYL7jQbiaV8lkN.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zodiac
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2007
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Crime, Drama, Mystery, Thriller
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/97630"
     onClick={[Function]}
   >
     <img
       alt="Zero Dark Thirty"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/yg6IDNucLAEj7E5loTyTnUW2pgb.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zero Dark Thirty
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2012
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Thriller, Drama, History
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/6795"
     onClick={[Function]}
   >
     <img
       alt="Zathura: A Space Adventure"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/amqgIuISRBt8tsZM6cTT6gO9WLR.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zathura: A Space Adventure
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2005
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Family, Fantasy, Science Fiction, Adventure
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/133931"
     onClick={[Function]}
   >
     <img
       alt="Zambezia"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/dLZTSTe4czdJ3Fr6vwy8XwVzLF5.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zambezia
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2012
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Comedy, Animation, Adventure, Family
       </p>
     </div>
   </a>
   <a
-    className="panel"
+    className="Movie-panel-0-1-2"
     href="/film/10358"
     onClick={[Function]}
   >
     <img
       alt="Zack and Miri Make a Porno"
-      className="poster"
+      className="Movie-poster-0-1-1"
       src="https://image.tmdb.org/t/p/w500/zxwEJBhSSu5AuKTTd4ugWaCqmg.jpg"
     />
     <div>
       <div
-        className="info"
+        className="MovieInfo-info-0-1-3"
       >
         <div
-          className="title"
+          className="MovieInfo-title-0-1-4"
         >
           Zack and Miri Make a Porno
         </div>
         <div
-          className="releaseDate"
+          className="MovieInfo-releaseDate-0-1-5"
         >
           2008
         </div>
       </div>
       <p
-        className="genres"
+        className="MovieInfo-genres-0-1-6"
       >
         Comedy
       </p>
@@ -265,10 +265,10 @@ exports[`Results component renders correctly when there are movies to display 1`
 
 exports[`Results component renders correctly when there are no movies to display 1`] = `
 <article
-  className="list"
+  className={undefined}
 >
   <article
-    className="noResults"
+    className="NoMovies-noResults-0-1-7"
   >
     <h2>
       No films found

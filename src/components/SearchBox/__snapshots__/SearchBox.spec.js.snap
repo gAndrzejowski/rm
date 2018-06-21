@@ -6,27 +6,27 @@ Array [
     Find your movie
   </h2>,
   <input
-    className="searchInput"
+    className={undefined}
     onChange={[MockFunction]}
     placeholder="Action"
     type="text"
     value="test2"
   />,
   <div
-    className="controls"
+    className={undefined}
   >
     <div
-      className="controls"
+      className={undefined}
     >
       Search by
       <button
-        className="btnInactive"
+        className={undefined}
         onClick={[Function]}
       >
         title
       </button>
       <button
-        className="btnActive"
+        className={undefined}
         onClick={[Function]}
       >
         genre
@@ -37,7 +37,7 @@ Array [
       onClick={[Function]}
     >
       <button
-        className="search"
+        className={undefined}
         onClick={[Function]}
       >
         Search
@@ -53,27 +53,27 @@ Array [
     Find your movie
   </h2>,
   <input
-    className="searchInput"
+    className={undefined}
     onChange={[MockFunction]}
     placeholder="Kill Bill"
     type="text"
     value="test"
   />,
   <div
-    className="controls"
+    className={undefined}
   >
     <div
-      className="controls"
+      className={undefined}
     >
       Search by
       <button
-        className="btnActive"
+        className={undefined}
         onClick={[Function]}
       >
         title
       </button>
       <button
-        className="btnInactive"
+        className={undefined}
         onClick={[Function]}
       >
         genre
@@ -84,7 +84,7 @@ Array [
       onClick={[Function]}
     >
       <button
-        className="search"
+        className={undefined}
         onClick={[Function]}
       >
         Search

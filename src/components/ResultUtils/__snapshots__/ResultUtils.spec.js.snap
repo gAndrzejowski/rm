@@ -2,19 +2,19 @@
 
 exports[`ResultUtil component renders correctly with movie not selected 1`] = `
 <div
-  className="resultUtils"
+  className={undefined}
 >
   <p>
     10 movies found
   </p>
   <div
-    className="sort"
+    className={undefined}
   >
     <div>
       Sort By
     </div>
     <div
-      className="active"
+      className={undefined}
       onClick={[Function]}
       role="button"
     >
@@ -33,19 +33,19 @@ exports[`ResultUtil component renders correctly with movie not selected 1`] = `
 
 exports[`ResultUtil component renders correctly with movie selected 1`] = `
 <div
-  className="resultUtils"
+  className={undefined}
 >
   <p>
     Films by Crime genre
   </p>
   <div
-    className="sort"
+    className={undefined}
   >
     <div>
       Sort By
     </div>
     <div
-      className="active"
+      className={undefined}
       onClick={[Function]}
       role="button"
     >

@@ -36,7 +36,7 @@ exports[`App component renders correctly 1`] = `
         </Switch>
       </ErrorBoundary>
       <ErrorBoundary>
-        <Footing />
+        <Jss(Footing) />
       </ErrorBoundary>
     </UNDEFINED>
   </UNDEFINED>

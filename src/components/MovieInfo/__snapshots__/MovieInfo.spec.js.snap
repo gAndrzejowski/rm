@@ -3,19 +3,19 @@
 exports[`MovieInfo component renders correctly 1`] = `
 <div>
   <div
-    className="info"
+    className="MovieInfo-info-0-1-1"
   >
     <div
-      className="title"
+      className="MovieInfo-title-0-1-2"
     >
       Zulu
     </div>
     <div
-      className="releaseDate"
+      className="MovieInfo-releaseDate-0-1-3"
     />
   </div>
   <p
-    className="genres"
+    className="MovieInfo-genres-0-1-4"
   >
     Crime, Drama, Thriller
   </p>

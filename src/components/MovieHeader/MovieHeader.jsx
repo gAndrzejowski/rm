@@ -1,7 +1,8 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from '../Heading/Heading.scss';
+import injectStylesheet from 'react-jss';
+import styles from '../Heading/Heading.styles';
 import PageTitle from '../PageTitle/PageTitle';
 import BackToSearch from '../BackToSearch/BackToSearch';
 import MoviePage from '../MoviePage/MoviePage';
@@ -14,9 +15,10 @@ type Props = {
   selectedMovie: MovieData,
   backToSearch: () => void,
   getMovie: number => void,
+  classes: Object,
 }
 export const MovieHeader = ({
-  match: { params: { id } }, selectedMovie, backToSearch, getMovie,
+  match: { params: { id } }, classes, selectedMovie, backToSearch, getMovie,
 }: Props) => {
   if (!selectedMovie || selectedMovie.id !== +id) {
     getMovie(id);
@@ -24,7 +26,7 @@ export const MovieHeader = ({
   }
   return (
     <header>
-      <div className={styles.top}>
+      <div className={classes.top}>
         <PageTitle />
         <BackToSearch onClick={backToSearch} />
       </div>
@@ -42,4 +44,4 @@ export const mapDispatchToProps = (dispatch :any) => ({
   getMovie: async (id :number) :Promise<any> => dispatch(await getById(id)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(injectStylesheet(styles)(MovieHeader));

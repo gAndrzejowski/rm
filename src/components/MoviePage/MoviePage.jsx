@@ -1,9 +1,10 @@
 // @flow
 import React from 'react';
-import styles from './MoviePage.scss';
+import injectStylesheet from 'react-jss';
+import styles from './MoviePage.styles';
 import type { MovieData } from '../../flowTypes';
 
-const MoviePage = (props :{movie: MovieData}) => {
+const MoviePage = (props :{movie: MovieData, classes: Object}) => {
   const {
     title,
     release_date: releaseDate,
@@ -13,11 +14,12 @@ const MoviePage = (props :{movie: MovieData}) => {
     vote_average: voteAverage,
     genres,
   } = props.movie;
+  const { classes } = props;
   return (
-    <div className={styles.moviePage}>
-      <img className={styles.poster} src={posterPath} alt="" />
-      <div className={styles.details}>
-        <h1>{title} <span className={styles.rating}>{voteAverage}</span> </h1>
+    <div className={classes.moviePage}>
+      <img className={classes.poster} src={posterPath} alt="" />
+      <div className={classes.details}>
+        <h1>{title} <span className={classes.rating}>{voteAverage}</span> </h1>
         <small>{genres.join(', ')}</small>
         <p>{`${releaseDate.substring(0, 4)}    ${runtime} min`}</p>
         <p>{overview}</p>
@@ -25,5 +27,8 @@ const MoviePage = (props :{movie: MovieData}) => {
     </div>
   );
 };
+MoviePage.defaultProps = {
+  classes: {},
+};
 
-export default MoviePage;
+export default injectStylesheet(styles)(MoviePage);

@@ -2,7 +2,6 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { ResultUtils, mapDispatchToProps, mapStateToProps } from './ResultUtils';
-import styles from './ResultUtils.scss';
 import fetchMock from '../../__mocks__/fetchMock';
 import { sortMovies } from '../../actions/creators';
 import { swaggerBase } from '../../util/calls';
@@ -16,13 +15,6 @@ describe('ResultUtil component', () => {
   it('renders correctly with movie selected', () => {
     const tree = renderer.create(<ResultUtils changeSorting={jest.fn()} selected={mockMovies[0]} currentSort="release_date" numFound={5} />);
     expect(tree).toMatchSnapshot();
-  });
-  it('assigns active class to proper option div based on currentSort prop', () => {
-    const wrapper = shallow(<ResultUtils changeSorting={jest.fn()} currentSort="release_date" numFound={10} />);
-    expect(wrapper.find(`.${styles.active}`).text()).toBe('release date');
-
-    wrapper.setProps({ currentSort: 'vote_average' });
-    expect(wrapper.find(`.${styles.active}`).text()).toBe('rating');
   });
   it('calls changeSorting with proper args when one of the option divs is clicked', () => {
     const wrapper = shallow(<div><ResultUtils changeSorting={jest.fn()} currentSort="release_date" numFound={10} /></div>);

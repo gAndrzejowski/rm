@@ -2,10 +2,10 @@
 
 exports[`Footing component renders correctly 1`] = `
 <footer
-  className="appFooting"
+  className="Footing-appFooting-0-1-1"
 >
   <p
-    className="title"
+    className="PageTitle-title-0-1-2"
   >
     netflixroulette
   </p>

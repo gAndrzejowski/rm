@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { MemoryRouter as Router } from 'react-router';
 import { shallow } from 'enzyme';
 import mockMovies from '../../__mocks__/mockMovies';
-import Movie from './Movie';
+import { Movie } from './Movie';
 
 describe('Results component', () => {
   it('renders correctly', () => {

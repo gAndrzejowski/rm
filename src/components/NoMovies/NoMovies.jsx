@@ -1,10 +1,14 @@
 // @flow
 import React from 'react';
-import styles from './NoMovies.scss';
+import injectStylesheet from 'react-jss';
+import styles from './NoMovies.styles';
 
-const NoMovies = () => (
-  <article className={styles.noResults}>
+const NoMovies = ({ classes } :Object) => (
+  <article className={classes.noResults}>
     <h2>No films found</h2>
   </article>
 );
-export default NoMovies;
+NoMovies.defaultProps = {
+  classes: {},
+};
+export default injectStylesheet(styles)(NoMovies);

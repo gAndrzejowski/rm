@@ -2,9 +2,10 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import injectStylesheet from 'react-jss';
 import { searchMovies } from '../../actions/async';
 import { setSearchTxt, setSearchCriterion } from '../../actions/creators';
-import styles from './SearchBox.scss';
+import styles from './SearchBox.styles';
 import type { Store } from '../../flowTypes';
 
 type Props = {
@@ -12,37 +13,38 @@ type Props = {
   query: string,
   onQueryChange: Event => void,
   onCriterionChosen: string => void,
-  search: (string, string) => void
+  search: (string, string) => void,
+  classes: Object,
 }
 
 export const SearchBox = ({
-  searchBy, query, search, onQueryChange, onCriterionChosen,
+  searchBy, query, search, onQueryChange, onCriterionChosen, classes,
 }: Props) => (
   <Fragment>
     <h2>Find your movie</h2>
     <input
-      className={styles.searchInput}
+      className={classes.searchInput}
       type="text"
       placeholder={searchBy === 'title' ? 'Kill Bill' : 'Action'}
       onChange={onQueryChange}
       value={query}
     />
-    <div className={styles.controls}>
-      <div className={styles.controls}>
+    <div className={classes.controls}>
+      <div className={classes.controls}>
                        Search by
         <button
           onClick={() => onCriterionChosen('title')}
-          className={searchBy === 'title' ? styles.btnActive : styles.btnInactive}
+          className={searchBy === 'title' ? classes.btnActive : classes.btnInactive}
         >title
         </button>
         <button
           onClick={() => onCriterionChosen('genres')}
-          className={searchBy === 'genres' ? styles.btnActive : styles.btnInactive}
+          className={searchBy === 'genres' ? classes.btnActive : classes.btnInactive}
         >genre
         </button>
       </div>
       <Link href={`/search/${searchBy}/${query}`} to={`/search/${searchBy}/${query}`}>
-        <button className={styles.search} onClick={() => search(query, searchBy)}>Search</button>
+        <button className={classes.search} onClick={() => search(query, searchBy)}>Search</button>
       </Link>
     </div>
   </Fragment>
@@ -50,6 +52,7 @@ export const SearchBox = ({
 
 SearchBox.defaultProps = {
   query: '',
+  classes: {},
 };
 
 export const mapStateToProps = (state :Store):{
@@ -66,4 +69,4 @@ export const mapDispatchToProps = (dispatch :any) => ({
   search: async (query :string, searchBy :string) => dispatch(await searchMovies(query, searchBy)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBox);
+export default connect(mapStateToProps, mapDispatchToProps)(injectStylesheet(styles)(SearchBox));

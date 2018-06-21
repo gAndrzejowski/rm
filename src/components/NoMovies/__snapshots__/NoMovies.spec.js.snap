@@ -2,7 +2,7 @@
 
 exports[`NoMovies component renders correctly 1`] = `
 <article
-  className="noResults"
+  className="NoMovies-noResults-0-1-1"
 >
   <h2>
     No films found

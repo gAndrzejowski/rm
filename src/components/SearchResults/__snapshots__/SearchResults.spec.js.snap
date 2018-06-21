@@ -2,7 +2,7 @@
 
 exports[`Search Results component renders correctly 1`] = `
 <article>
-  <Connect(ResultUtils) />
-  <Connect(Results) />
+  <Connect(Jss(ResultUtils)) />
+  <Connect(Jss(Results)) />
 </article>
 `;

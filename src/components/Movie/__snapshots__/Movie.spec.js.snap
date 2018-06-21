@@ -2,32 +2,32 @@
 
 exports[`Results component renders correctly 1`] = `
 <a
-  className="panel"
+  className={undefined}
   href="/film/19908"
   onClick={[Function]}
 >
   <img
     alt="Zombieland"
-    className="poster"
+    className={undefined}
     src="https://image.tmdb.org/t/p/w500/vUzzDpVrab1BOG3ogxhRGfLN94d.jpg"
   />
   <div>
     <div
-      className="info"
+      className="MovieInfo-info-0-1-1"
     >
       <div
-        className="title"
+        className="MovieInfo-title-0-1-2"
       >
         Zombieland
       </div>
       <div
-        className="releaseDate"
+        className="MovieInfo-releaseDate-0-1-3"
       >
         2009
       </div>
     </div>
     <p
-      className="genres"
+      className="MovieInfo-genres-0-1-4"
     >
       Comedy, Horror
     </p>

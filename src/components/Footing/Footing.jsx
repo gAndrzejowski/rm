@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
+import injectSheet from 'react-jss';
 import PageTitle from '../PageTitle/PageTitle';
-import styles from './Footing.scss';
+import styles from './Footing.styles';
 
-const Footing = () => (
-  <footer className={styles.appFooting}>
+const Footing = ({ classes } :Object) => (
+  <footer className={classes.appFooting}>
     <PageTitle />
   </footer>);
-export default Footing;
+export default injectSheet(styles)(Footing);
