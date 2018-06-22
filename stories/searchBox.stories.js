@@ -25,7 +25,7 @@ storiesOf('Search Box', module)
     <Router context={{}}>
       <div>
         <Search
-          searchBy="genre"
+          searchBy="genres"
           query="Action"
           onQueryChange={action('query changed')}
           onCriterionChosen={action('change search criteria')}
