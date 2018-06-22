@@ -13,7 +13,8 @@ const button = (bg :string) => ({
   outline: 'none',
 });
 const styles = {
-  'btnActive, search': button('firebrick'),
+  btnActive: button('firebrick'),
+  search: button('firebrick'),
   btnInactive: button('grey'),
   controls: {
     display: 'flex',
